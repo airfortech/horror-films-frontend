@@ -1,0 +1,23 @@
+.app {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto var(--margin-lg) 1fr;
+  grid-template-rows: auto 1fr;
+  /* background: blue; */
+}
+
+.wrapper {
+  padding: var(--margin-lg) 0;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(127, 255, 212, 0.096);
+  background-color: var(--primary-bgcolor);
+  background-image: url("./assets/images/bg.jpg");
+  background-size: contain;
+  background-size: auto 100%;
+  background-position: center 0;
+  background-repeat: repeat-x;
+}

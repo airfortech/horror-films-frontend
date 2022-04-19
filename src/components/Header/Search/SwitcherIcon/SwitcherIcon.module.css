@@ -1,0 +1,16 @@
+.switcherIcon {
+  border: none;
+  margin: auto var(--margin-sm);
+  display: flex;
+  align-items: center;
+  color: var(--third-color);
+}
+
+.switcherIcon > i {
+  font-size: calc(var(--font-size-md) * 1.2);
+  transition: all 0.2s ease;
+}
+
+.switcherIcon > i:hover {
+  transform: scale(1.2);
+}

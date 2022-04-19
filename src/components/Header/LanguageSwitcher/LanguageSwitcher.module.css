@@ -1,0 +1,39 @@
+.switcher {
+  border: none;
+  margin-top: var(--margin-sm);
+  margin-right: -6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all var(--transition-speed-fast) ease;
+}
+
+.switcher > i {
+  color: var(--header-color);
+  border: none;
+  font-size: var(--font-size-xl);
+  opacity: 0.7;
+  font-weight: 600;
+  transition: all var(--transition-speed-fast) ease;
+}
+
+.switcher > i:hover {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+.switcher > .flag {
+  position: relative;
+  height: 25px;
+  width: 25px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-bgcolor-opacity);
+  transition: all var(--transition-speed-fast) ease;
+  opacity: 0.7;
+}
+
+.switcher > .flag:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}

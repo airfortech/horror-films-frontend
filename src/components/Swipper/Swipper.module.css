@@ -1,0 +1,7 @@
+.swipper :global(.swiper-scrollbar) {
+  background: rgba(214, 49, 49, 0.2);
+}
+
+.swipper .img {
+  height: 50px;
+}

@@ -1,0 +1,16 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  max-width: 1200px;
+  width: 95%;
+  width: 100%;
+}
+
+.noFilmsFound {
+  margin-top: var(--margin-xl);
+  font-size: calc(var(--font-size-xl) * 2);
+  color: var(--secondary-color);
+  opacity: 0;
+}

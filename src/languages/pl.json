@@ -1,0 +1,29 @@
+{
+  "header": {
+    "firstLine": "Horrory",
+    "secondLine": "Z Lat  90"
+  },
+  "searchInput": "Szukaj...",
+  "searchCategories": {
+    "title": "tytuł",
+    "release_date": "data premiery",
+    "vote_average": "ocena",
+    "popularity": "popularność"
+  },
+  "noFilmsFound": "Nie znaleziono filmów.",
+  "cardMoreInfoButton": "Więcej informacji...",
+  "months": [
+    "sty",
+    "lut",
+    "mar",
+    "kwi",
+    "maj",
+    "cze",
+    "lip",
+    "sie",
+    "wrz",
+    "paz",
+    "lis",
+    "gru"
+  ]
+}

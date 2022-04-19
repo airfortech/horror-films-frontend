@@ -1,0 +1,116 @@
+.slider {
+  padding: 20px 0 27px;
+  width: var(--slider-width);
+  overflow: hidden;
+  /* background-color: rgba(255, 235, 205, 0.11); */
+  border: 1px solid transparent;
+  z-index: 2;
+}
+
+.slider :global(.swiper) {
+  width: calc(var(--slider-width) * 0.86);
+  overflow: visible;
+  /* border: 1px solid orange; */
+}
+
+.slider :global(.swiper-scrollbar) {
+  bottom: -27px;
+  background-color: var(--secondary-bgcolor-opacity2);
+  background-color: transparent;
+  /* border-radius: 0; */
+}
+
+.slider :global(.swiper-scrollbar-drag) {
+  /* height: 50px; */
+  background-color: var(--secondary-bgcolor);
+  /* border-radius: 0; */
+  cursor: pointer;
+}
+
+.slide {
+  width: var(--slide-width);
+  max-width: var(--slide-max-width);
+  /* height: 330px; */
+  /* border: 2px solid green; */
+  background-size: contain;
+  cursor: pointer;
+  user-select: none;
+  transition: transform var(--transition-speed-normal) ease;
+}
+
+.slide:global(.swiper-slide-active) {
+  transform-origin: 0%;
+}
+
+.slide:last-child {
+  transform-origin: 100%;
+}
+
+.slide:hover {
+  transform: translateY(8px);
+  z-index: 1;
+}
+
+.mask {
+  /* scroll bar width, for use in mask calculations */
+  --scrollbar-width: 0px;
+
+  /* mask fade distance, for use in mask calculations */
+  --mask-size: 7%;
+
+  /* If content exceeds height of container, overflow! */
+  /* overflow-y: auto; */
+
+  /* Our height limit */
+  /* height: 300px; */
+
+  /* Need to make sure container has bottom space,
+otherwise content at the bottom is always faded out */
+  /* padding-bottom: var(--mask-size); */
+
+  /* Keep some space between content and scrollbar */
+  padding-right: 0px;
+
+  /* The CSS mask */
+
+  /* The content mask is a linear gradient from top to bottom */
+  /* --mask-image-content: linear-gradient(
+    to right,
+    transparent 20px,
+    #0009 calc(var(--mask-size) - 10px),
+    #000 var(--mask-size),
+    #000 calc(100% - var(--mask-size)),
+    #0009 calc(100% - var(--mask-size) + 10px),
+    transparent calc(100% - 20px)
+  ); */
+
+  --mask-image-content: linear-gradient(
+    to right,
+    transparent,
+    #000 var(--mask-size),
+    #000 calc(100% - var(--mask-size)),
+    transparent
+  );
+
+  /* Here we scale the content gradient to the width of the container
+minus the scrollbar width. The height is the full container height */
+  --mask-size-content: calc(100% - var(--scrollbar-width)) 100%;
+
+  /* The scrollbar mask is a black pixel */
+  --mask-image-scrollbar: linear-gradient(black, black);
+
+  /* The width of our black pixel is the width of the scrollbar.
+The height is the full container height */
+  --mask-size-scrollbar: var(--scrollbar-width) 100%;
+
+  /* Apply the mask image and mask size variables */
+  mask-image: var(--mask-image-content), var(--mask-image-scrollbar);
+  mask-size: var(--mask-size-content), var(--mask-size-scrollbar);
+
+  /* Position the content gradient in the top left, and the
+scroll gradient in the top right */
+  mask-position: 0 0, 100% 0;
+
+  /* We don't repeat our mask images */
+  mask-repeat: no-repeat, no-repeat;
+}

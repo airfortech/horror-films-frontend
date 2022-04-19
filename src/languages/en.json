@@ -1,0 +1,29 @@
+{
+  "header": {
+    "firstLine": "90's",
+    "secondLine": "Horror Films"
+  },
+  "searchInput": "Search...",
+  "searchCategories": {
+    "title": "title",
+    "release_date": "release date",
+    "vote_average": "vote average",
+    "popularity": "popularity"
+  },
+  "noFilmsFound": "No films found.",
+  "cardMoreInfoButton": "More info...",
+  "months": [
+    "jan",
+    "feb",
+    "mar",
+    "apr",
+    "may",
+    "jun",
+    "jul",
+    "aug",
+    "sep",
+    "oct",
+    "nov",
+    "dec"
+  ]
+}

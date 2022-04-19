@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Header } from "./components/Header/Header";
+import { FilmsList } from "./components/FilmsList/FilmsList";
+import { LanguageProvider } from "./context/LanguageContext/LanguageContext";
+import { Fog } from "./effects/Fog/Fog";
+import style from "./App.module.css";
+import { bats } from "./effects/bats/bats";
+import { useEffect } from "react";
+import { QueryProvider } from "./context/QueryContext/QueryContext";
 
-function App() {
+export const App = () => {
+  useEffect(() => {
+    bats(5);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryProvider>
+      <LanguageProvider>
+        <div className={style.app}>
+          <Header />
+          <div className={style.wrapper}>
+            <FilmsList />
+            {/* <Fog cover /> */}
+          </div>
+        </div>
+      </LanguageProvider>
+    </QueryProvider>
   );
-}
-
-export default App;
+};

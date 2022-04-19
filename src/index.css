@@ -1,13 +1,142 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: Bloodseeker;
+  src: url("../public/BloodseekerDemo-DxW1.ttf");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-font: "Oswald", sans-serif;
+  --secondary-font: "Bloodseeker", "Creepster", cursive;
+
+  --color-1: #ff2424;
+  --color-2: #a70101;
+  --color-2a: #a70101d2;
+  --color-2b: #a7010132;
+  --color-3: #333;
+  --color-3a: #333;
+  --color-4: #fff;
+  --color-4a: #fff;
+  --color-5: #212121;
+  --color-5a: #212121;
+
+  --primary-color: var(--color-2);
+  --secondary-color: var(--color-4);
+  --third-color: var(--color-4);
+  --header-color: var(--color-1);
+  --primary-bgcolor: var(--color-5);
+  --secondary-bgcolor: var(--color-2);
+  --secondary-bgcolor-opacity: var(--color-2a);
+  --secondary-bgcolor-opacity2: var(--color-2b);
+  --third-bgcolor: var(--color-3);
+  --header-bgcolor: #000;
+  --header-bgcolor-opacity: #0008;
+
+  --margin-sm: 1rem;
+  --margin-md: 2rem;
+  --margin-lg: 3rem;
+  --margin-xl: 4rem;
+
+  --font-size-sm: 1.3rem;
+  --font-size-md: 1.5rem;
+  --font-size-lg: 1.8rem;
+  --font-size-xl: 2rem;
+  --font-size-xxl: 6rem;
+
+  --avatar-size: 90px;
+  --avatar-size-sm: 50px;
+
+  --border-size: 6px;
+  --border-size-sm: 3px;
+
+  --border-radius-sm: 5px;
+  --border-radius-md: 8px;
+
+  --header: 18vh;
+
+  --transition-speed-fast: 0.2s;
+  --transition-speed-normal: 0.3s;
+  --transition-speed-slow: 0.5s;
+
+  --slide-width: 60%;
+  --slide-max-width: 230px;
+  --slider-width: 98%;
+
+  --card-info-height: 90px;
+  --card-more-info-height: 300px;
+}
+
+html {
+  font-size: 10px; /* 1rem = 10px */
+}
+body {
+  font-size: 1.6rem;
+  font-family: var(--primary-font);
+  -webkit-tap-highlight-color: transparent; /* Umieszczone w body usuwa podświetlenie podczas tapnięcia na mobile */
+  color: var(--secondary-color);
+  background-color: var(--primary-bgcolor);
+  background-image: url("./assets/images/bg.jpg");
+  /* background-size: contain; */
+  /* background-size: auto 100%; */
+  background-position: center 200px;
+  background-repeat: no-repeat;
+}
+a {
+  text-decoration: none;
+}
+button {
+  font-family: inherit;
+  padding: 0;
+  border: 1px solid;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --margin-sm: 1rem;
+    --margin-md: 1rem;
+    --margin-lg: 1.5rem;
+    --margin-xl: 2rem;
+
+    --font-size-sm: 1.1rem;
+    --font-size-md: 1.3rem;
+    --font-size-lg: 1.8rem;
+    --font-size-xl: 1.5rem;
+    --font-size-xxl: 3rem;
+
+    --avatar-size: 90px;
+    --avatar-size-sm: 50px;
+
+    --border-size: 6px;
+    --border-size-sm: 3px;
+
+    --border-radius-sm: 5px;
+    --border-radius-md: 8px;
+
+    --header: 18vh;
+
+    --slide-width: 60%;
+    --slider-width: 90%;
+
+    --card-info-height: 76px;
+    --card-more-info-height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --font-size-xxl: 4rem;
+  }
 }

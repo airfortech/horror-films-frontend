@@ -1,0 +1,13 @@
+.avatar {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  border: var(--border-size) solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.small {
+  width: var(--avatar-size-sm);
+  height: var(--avatar-size-sm);
+  border: var(--border-size-sm) solid var(--primary-color);
+}
