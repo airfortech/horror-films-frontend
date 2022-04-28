@@ -13,7 +13,7 @@ export const MusicPlayer = () => {
   };
 
   const handleChangeVolume = e => {
-    audio.current.volume = volume / 100;
+    audio.current.volume = e.target.value / 100;
     setVolume(e.target.value);
   };
 

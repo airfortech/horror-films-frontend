@@ -18,7 +18,7 @@ export const App = () => {
           <Header />
           <div className={style.wrapper}>
             <FilmsList />
-            {/* <Fog cover /> */}
+            <Fog cover />
           </div>
         </div>
       </LanguageProvider>
