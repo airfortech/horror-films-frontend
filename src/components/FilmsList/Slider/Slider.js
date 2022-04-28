@@ -14,6 +14,7 @@ export const Slider = () => {
   console.log("odpalamy slidera");
   const { films } = useContext(QueryContext);
   const ref = useRef(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     console.log("Animations");
@@ -23,6 +24,13 @@ export const Slider = () => {
       { opacity: 1, duration: 0.8, ease: "sine.in" }
     );
   }, [films]);
+
+  useEffect(() => {
+    const widthListener = window.addEventListener("resize", () => {
+      setWindowWidth(window.innerWidth);
+    });
+    return () => window.removeEventListener(widthListener);
+  }, []);
 
   return (
     <div ref={ref} className={style.slider + " " + style.mask}>
@@ -70,6 +78,7 @@ export const Slider = () => {
                 vote_average={vote_average}
                 release_date={release_date}
                 poster_path={poster_path}
+                windowWidth={windowWidth}
               />
             </SwiperSlide>
           )

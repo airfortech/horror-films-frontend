@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import style from "./Card.module.css";
 import { LanguageContext } from "../../../../context/LanguageContext/LanguageContext";
 import { convertDate } from "../../../../tools/convertDate";
@@ -6,23 +6,25 @@ import { imgPosterUrl } from "../../../../variables";
 import { cutText } from "../../../../tools/cutText";
 import defaultPoster from "../../../../assets/images/default-poster.png";
 
-let windowWidth = 0;
-
-window.addEventListener("resize", () => {
-  windowWidth = window.innerWidth;
-});
-
-const cutOvierviewText = text => {
-  return windowWidth > 560 ? cutText(text, 200) : cutText(text, 80);
-};
-
 export const Card = props => {
   const [active, setActive] = useState(false);
   const languageContext = useContext(LanguageContext);
   const { translations } = languageContext;
-  const { id, title, overview, vote_average, release_date, poster_path } =
-    props;
+  const {
+    id,
+    title,
+    overview,
+    vote_average,
+    release_date,
+    poster_path,
+    windowWidth,
+  } = props;
   const date = convertDate(release_date, translations.months);
+
+  const cutOvierviewText = text => {
+    return windowWidth > 560 ? cutText(text, 200) : cutText(text, 80);
+  };
+
   return (
     <div
       className={style.card}
