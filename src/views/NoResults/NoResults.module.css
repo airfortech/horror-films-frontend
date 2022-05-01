@@ -1,0 +1,6 @@
+.noFilmsFound {
+  margin-top: var(--margin-xl);
+  font-size: calc(var(--font-size-xl) * 2);
+  color: var(--secondary-color);
+  opacity: 0;
+}

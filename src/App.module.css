@@ -8,11 +8,14 @@
 }
 
 .wrapper {
-  padding: var(--margin-lg) 0;
+  padding: var(--margin-lg) 0 0 0;
+  /* padding: 0; */
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   background-color: rgba(127, 255, 212, 0.096);
   background-color: var(--primary-bgcolor);
   background-image: url("./assets/images/bg.jpg");

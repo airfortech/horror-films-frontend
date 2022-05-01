@@ -1,0 +1,39 @@
+.footer {
+  padding: var(--margin-sm);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  background-color: var(--header-bgcolor-opacity);
+  z-index: 2;
+}
+
+.footer p {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.footer a:hover p {
+}
+
+.footer a,
+.footer > p {
+  margin: 0 var(--margin-lg);
+  display: flex;
+  align-items: center;
+  color: var(--secondary-color);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  opacity: 1;
+}
+
+.footer a i {
+  margin-right: var(--margin-sm);
+}
+
+.footer a img {
+  height: 54%;
+}

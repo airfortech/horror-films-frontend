@@ -1,5 +1,5 @@
 .pagination {
-  margin: var(--margin-sm);
+  margin: 0 var(--margin-sm);
   display: flex;
   justify-content: space-between;
   max-width: 400px;

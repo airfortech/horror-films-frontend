@@ -1,26 +1,18 @@
-import React, {
-  useContext,
-  useRef,
-  useEffect,
-  useState,
-  useCallback,
-} from "react";
+import React, { useRef, useEffect, useState } from "react";
 import style from "./FilmsList.module.css";
 import { Slider } from "./Slider/Slider";
 import { Pagination } from "./Pagination/Pagination";
 import { gsap } from "gsap";
-import { Fog } from "../../effects/Fog/Fog";
-import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
 import { fetchFilms } from "../../tools/fetchFilms";
-import { useLocation, useParams, useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams, useNavigate } from "react-router-dom";
 
 export const FilmsList = () => {
-  const { translations } = useContext(LanguageContext);
   const [films, setFilms] = useState("");
   const ref = useRef(null);
   console.log("Odpalamy filmlist");
   const [searchParams] = useSearchParams();
   const params = useParams();
+  const navigate = useNavigate();
 
   const getFilms = async () => {
     const newSearchParams = searchParams;
@@ -53,16 +45,19 @@ export const FilmsList = () => {
     );
   }, [films]);
 
-  if (!films?.films || films.count === 0)
-    return (
-      <p ref={ref} className={style.noFilmsFound}>
-        {translations.noFilmsFound}
-      </p>
-    );
+  if (!films?.films || films.count === 0) {
+    navigate(`/${params.lang}/films/no-results`);
+    console.log("blabla");
+    return <div></div>;
+  }
   return (
     <section className={style.list}>
-      <Pagination page={films.page} pages={films.pages} />
-      <Slider films={films.films} />
+      <div></div>
+      <div>
+        <Pagination page={films.page} pages={films.pages} />
+        <Slider films={films.films} />
+      </div>
+      <div></div>
     </section>
   );
 };

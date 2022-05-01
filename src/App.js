@@ -1,5 +1,7 @@
 import { Header } from "./components/Header/Header";
 import { FilmsList } from "./components/FilmsList/FilmsList";
+import { Footer } from "./components/Footer/Footer";
+import { NoResults } from "./views/NoResults/NoResults";
 import { LanguageProvider } from "./context/LanguageContext/LanguageContext";
 import { Fog } from "./effects/Fog/Fog";
 import style from "./App.module.css";
@@ -32,7 +34,9 @@ export const App = () => {
                 }
               />
               <Route path="/:lang/films/" element={<FilmsList />} />
+              <Route path="/:lang/films/no-results" element={<NoResults />} />
             </Routes>
+            <Footer />
             <Fog cover />
           </div>
         </div>

@@ -64,8 +64,8 @@
   --transition-speed-normal: 0.3s;
   --transition-speed-slow: 0.5s;
 
-  --slide-width: 60%;
-  --slide-max-width: 230px;
+  --slide-width: 50%;
+  --slide-max-width: 200px;
   --slider-width: 98%;
 
   --card-info-height: 90px;
@@ -127,11 +127,11 @@ input {
 
     --header: 18vh;
 
-    --slide-width: 60%;
+    --slide-width: 50%;
     --slider-width: 90%;
 
     --card-info-height: 76px;
-    --card-more-info-height: 250px;
+    --card-more-info-height: 200px;
   }
 }
 

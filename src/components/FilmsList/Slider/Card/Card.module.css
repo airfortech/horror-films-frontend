@@ -134,7 +134,7 @@
 
 @media (max-width: 480px) {
   .overview {
-    height: 25%;
+    height: 35%;
     overflow: hidden;
   }
   .moreInfo p {

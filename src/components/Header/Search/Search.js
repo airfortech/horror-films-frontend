@@ -44,8 +44,8 @@ export const Search = () => {
           // aria-describedby="emailHelp"
         />
         <button type="submit" className={style.inputSubmit}>
-          <i className={`bx bxs-search-alt-2 ${style.hovered}`}></i>
-          <i className="bx bx-search-alt-2"></i>
+          <i className={`bx bx-search-alt ${style.hovered}`}></i>
+          <i className="bx bx-search"></i>
         </button>
       </div>
       <Switcher setSearchValues={setSearchValues} />

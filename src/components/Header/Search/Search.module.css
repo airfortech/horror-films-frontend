@@ -20,7 +20,9 @@
   border-radius: var(--border-radius-sm);
   border: none;
   outline: none;
+  max-width: 145px;
   padding: calc(var(--margin-sm) * 0.5) var(--margin-sm);
+  padding-right: 35px;
   color: var(--third-color);
   font-size: var(--font-size-md);
   font-weight: 300;
@@ -71,7 +73,7 @@
   top: 0;
   right: 0;
   opacity: 0;
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
   z-index: -1;
   transition: all 0.3s ease;
 }
