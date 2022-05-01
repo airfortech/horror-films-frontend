@@ -4,7 +4,7 @@ import style from "./MusicPlayer.module.css";
 
 export const MusicPlayer = () => {
   const audio = useRef(null);
-  const [isPlaying, setIsPLaying] = useState(true);
+  const [isPlaying, setIsPLaying] = useState(false);
   const [volume, setVolume] = useState(0);
 
   const handlePlayMusic = () => {

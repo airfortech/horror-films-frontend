@@ -1,16 +1,23 @@
 .switcherIcon {
   border: none;
   margin: auto var(--margin-sm);
+  height: 14px;
   display: flex;
   align-items: center;
   color: var(--third-color);
+  transition: all 0.3s ease;
 }
 
-.switcherIcon > i {
-  font-size: calc(var(--font-size-md) * 1.2);
-  transition: all 0.2s ease;
+.switcherIcon:hover {
+  transform: scale(1.1);
 }
 
-.switcherIcon > i:hover {
-  transform: scale(1.2);
+.box {
+  display: block;
+  margin-left: 2px;
+  height: 100%;
+  width: 2px;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  background-color: var(--third-color);
 }

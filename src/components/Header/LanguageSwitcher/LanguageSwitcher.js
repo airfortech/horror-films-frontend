@@ -2,16 +2,17 @@ import React, { useContext, useEffect } from "react";
 import style from "./LanguageSwitcher.module.css";
 import Flag from "react-world-flags";
 import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
-import { QueryContext } from "../../../context/QueryContext/QueryContext";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const LanguageSwitcher = () => {
   const { language, switchLanguage } = useContext(LanguageContext);
-  const { updateParams, updateFilms } = useContext(QueryContext);
+  const { pathname, search } = useLocation();
+  const navigate = useNavigate();
 
   console.log("updejtujemy languages");
   useEffect(() => {
-    const newParams = updateParams("language", language.code).toString();
-    updateFilms(newParams);
+    console.log("redirect: language switcher");
+    navigate("/" + language.code + pathname.slice(3) + search);
   }, [language]);
 
   return (

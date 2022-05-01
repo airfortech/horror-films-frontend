@@ -1,17 +1,39 @@
-import React, { useContext, useRef, useEffect } from "react";
+import React, {
+  useContext,
+  useRef,
+  useEffect,
+  useState,
+  useCallback,
+} from "react";
 import style from "./FilmsList.module.css";
 import { Slider } from "./Slider/Slider";
 import { Pagination } from "./Pagination/Pagination";
 import { gsap } from "gsap";
 import { Fog } from "../../effects/Fog/Fog";
 import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
-import { QueryContext } from "../../context/QueryContext/QueryContext";
+import { fetchFilms } from "../../tools/fetchFilms";
+import { useLocation, useParams, useSearchParams } from "react-router-dom";
 
 export const FilmsList = () => {
   const { translations } = useContext(LanguageContext);
-  const { films } = useContext(QueryContext);
+  const [films, setFilms] = useState("");
   const ref = useRef(null);
   console.log("Odpalamy filmlist");
+  const [searchParams] = useSearchParams();
+  const params = useParams();
+
+  const getFilms = async () => {
+    const newSearchParams = searchParams;
+    newSearchParams.set("language", params.lang);
+    const newFilms = await fetchFilms(newSearchParams.toString());
+    setFilms(newFilms);
+  };
+
+  useEffect(() => {
+    console.log("films update");
+    console.log(searchParams.toString());
+    getFilms();
+  }, [params.lang, searchParams]);
 
   useEffect(() => {
     console.log("Animations");
@@ -29,7 +51,7 @@ export const FilmsList = () => {
         },
       }
     );
-  }, [films.count, translations]);
+  }, [films]);
 
   if (!films?.films || films.count === 0)
     return (
@@ -39,8 +61,8 @@ export const FilmsList = () => {
     );
   return (
     <section className={style.list}>
-      <Pagination />
-      <Slider />
+      <Pagination page={films.page} pages={films.pages} />
+      <Slider films={films.films} />
     </section>
   );
 };

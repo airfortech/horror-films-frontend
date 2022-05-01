@@ -1,29 +1,30 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import style from "./Pagination.module.css";
 import { Pagination } from "react-headless-pagination";
-import { QueryContext } from "../../../context/QueryContext/QueryContext";
+import { useLocation, useSearchParams, useNavigate } from "react-router-dom";
 
-const PaginationContainer = () => {
+const PaginationContainer = ({ page, pages }) => {
   const [currentPage, setCurrentPage] = useState(0);
-  const { updateParams, films, updateFilms, setLoading } =
-    useContext(QueryContext);
+  const { pathname, search } = useLocation();
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
   console.log("");
   console.log("odpalamy paginacje");
-  console.log(films);
 
   const handlePageChange = newPage => {
     console.log("current page: " + (newPage + 1));
     setCurrentPage(newPage);
-    const newParams = updateParams("page", newPage + 1).toString();
-    console.log(newParams);
-    updateFilms(newParams);
+    const newSearchParams = searchParams;
+    newSearchParams.set("page", newPage + 1);
+    navigate(pathname + "?" + newSearchParams.toString());
   };
 
   return (
     <Pagination
-      currentPage={films.page - 1}
+      currentPage={page - 1}
       setCurrentPage={handlePageChange}
-      totalPages={films.pages}
+      totalPages={pages}
       edgePageCount={1}
       middlePagesSiblingCount={1}
       className={style.pagination}
@@ -50,7 +51,7 @@ const PaginationContainer = () => {
       <Pagination.NextButton
         className={
           style.paginationButton +
-          (currentPage === films.pages - 1 ? " " + style.disabled : "")
+          (currentPage === pages - 1 ? " " + style.disabled : "")
         }
       >
         <i className="bx bx-chevron-right" />

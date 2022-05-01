@@ -3,19 +3,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, Mousewheel } from "swiper";
 import { gsap } from "gsap";
 import { Card } from "./Card/Card";
-import { QueryContext } from "../../../context/QueryContext/QueryContext";
 
 import "swiper/css";
 import "swiper/css/lazy";
 import "swiper/css/scrollbar";
 import style from "./Slider.module.css";
 
-export const Slider = () => {
+export const Slider = ({ films }) => {
   console.log("odpalamy slidera");
-  const { films } = useContext(QueryContext);
   const ref = useRef(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
   useEffect(() => {
     console.log("Animations");
     gsap.fromTo(
@@ -61,7 +58,7 @@ export const Slider = () => {
         // onSwiper={swiper => console.log(swiper)}
         // onSlideChange={swiper => console.log(swiper.slides[swiper.activeIndex])}
       >
-        {films.films.map(
+        {films.map(
           ({
             id,
             title,

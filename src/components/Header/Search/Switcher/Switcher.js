@@ -1,13 +1,13 @@
 import React, { useContext, useState, useEffect } from "react";
 import { categories } from "../../../../variables";
 import { LanguageContext } from "../../../../context/LanguageContext/LanguageContext";
-import { QueryContext } from "../../../../context/QueryContext/QueryContext";
+// import { useSearchParams } from "react-router-dom";
 import style from "./Switcher.module.css";
 
-export const Switcher = () => {
+export const Switcher = ({ setSearchValues }) => {
   const [category, setCategory] = useState(0);
   const { translations } = useContext(LanguageContext);
-  const { updateParams } = useContext(QueryContext);
+  // const [searchParams, setSearchParams] = useSearchParams();
 
   const switchCategory = i => {
     setCategory(prevState =>
@@ -18,17 +18,14 @@ export const Switcher = () => {
   };
 
   useEffect(() => {
-    const newParams = updateParams("sort_by", categories[category]).toString();
-    console.log(newParams.toString());
+    // const newSearchParams = searchParams;
+    // newSearchParams.set("sort_by", categories[category]);
+    // setSearchParams(newSearchParams);
+    setSearchValues(prevState => ({
+      ...prevState,
+      sort_by: categories[category],
+    }));
   }, [category]);
-
-  // useEffect(() => {
-  //   const color = getComputedStyle(document.documentElement).getPropertyValue(
-  //     "--color-" + (category + 1)
-  //   );
-
-  //   document.documentElement.style.setProperty("--primary-color", color);
-  // }, [category]);
 
   return (
     <button type="button" className={style.switcher}>
