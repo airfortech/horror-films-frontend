@@ -1,7 +1,8 @@
 import { Header } from "./components/Header/Header";
-import { FilmsList } from "./components/FilmsList/FilmsList";
 import { Footer } from "./components/Footer/Footer";
-import { NoResults } from "./views/NoResults/NoResults";
+import { FilmsView } from "./views/FilmsView/FilmsView";
+import { FilmView } from "./views/FilmView/FilmView";
+import { NoResultsView } from "./views/NoResultsView/NoResultsView";
 import { LanguageProvider } from "./context/LanguageContext/LanguageContext";
 import { Fog } from "./effects/Fog/Fog";
 import style from "./App.module.css";
@@ -33,8 +34,12 @@ export const App = () => {
                   <Navigate replace to={"/en/films/?" + getFilmsUrlParams} />
                 }
               />
-              <Route path="/:lang/films/" element={<FilmsList />} />
-              <Route path="/:lang/films/no-results" element={<NoResults />} />
+              <Route path="/:lang/films/" element={<FilmsView />} />
+              <Route
+                path="/:lang/films/no-results"
+                element={<NoResultsView />}
+              />
+              <Route path="/:lang/films/:id" element={<FilmView />} />
             </Routes>
             <Footer />
             <Fog cover />

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import style from "./Card.module.css";
 import { LanguageContext } from "../../../../context/LanguageContext/LanguageContext";
 import { convertDate } from "../../../../tools/convertDate";
@@ -7,6 +8,7 @@ import { cutText } from "../../../../tools/cutText";
 import defaultPoster from "../../../../assets/images/default-poster.png";
 
 export const Card = props => {
+  const { lang } = useParams();
   const [active, setActive] = useState(false);
   const languageContext = useContext(LanguageContext);
   const { translations } = languageContext;
@@ -50,9 +52,9 @@ export const Card = props => {
           <p className={style.date}>{date}</p>
           <p className={style.title}>{cutText(title, 60)}</p>
           <p className={style.overview}>{cutOvierviewText(overview)}</p>
-          <a href="#" type="button" className={style.moreInfo}>
+          <Link to={`/${lang}/films/${id}`} className={style.moreInfo}>
             <p>{translations.cardMoreInfoButton}</p>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

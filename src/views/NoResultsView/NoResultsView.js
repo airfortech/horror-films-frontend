@@ -1,10 +1,10 @@
 import React, { useRef, useContext, useEffect } from "react";
 import { gsap } from "gsap";
-import style from "./NoResults.module.css";
+import style from "./NoResultsView.module.css";
 import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
 import { useParams } from "react-router-dom";
 
-export const NoResults = () => {
+export const NoResultsView = () => {
   const { translations } = useContext(LanguageContext);
   const ref = useRef(null);
   const { lang } = useParams();
