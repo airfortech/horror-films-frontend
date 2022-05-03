@@ -25,5 +25,12 @@
     "oct",
     "nov",
     "dec"
-  ]
+  ],
+  "tooltip": {
+    "search": "Click or hit enter to search",
+    "sortCategories": "Sort by category",
+    "sortType": "Sort ascending / descending",
+    "changeLanguage": "Change language",
+    "musicPlayer": "Play music in background"
+  }
 }

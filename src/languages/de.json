@@ -25,5 +25,12 @@
     "okt",
     "nov",
     "dez"
-  ]
+  ],
+  "tooltip": {
+    "search": "Klicken oder drücken Sie enter, um zu suchen",
+    "sortCategories": "Nach Kategorie sortieren",
+    "sortType": "Aufsteigend / absteigend sortieren",
+    "changeLanguage": "Sprache ändern",
+    "musicPlayer": "Musik im Hintergrund abspielen"
+  }
 }

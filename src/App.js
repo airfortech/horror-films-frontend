@@ -16,6 +16,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { getFilmsUrlParams } from "./variables";
+import { FilmsList } from "./components/FilmsList/FilmsList";
 
 export const App = () => {
   useEffect(() => {

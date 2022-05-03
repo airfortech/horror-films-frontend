@@ -1,8 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
+
 import musicPath from "../../assets/music/bg-music.mp3";
 import style from "./MusicPlayer.module.css";
 
 export const MusicPlayer = () => {
+  const { translations } = useContext(LanguageContext);
+
   const audio = useRef(null);
   const [isPlaying, setIsPLaying] = useState(false);
   const [volume, setVolume] = useState(0);
@@ -25,7 +29,10 @@ export const MusicPlayer = () => {
   }, []);
 
   return (
-    <div className={style.container}>
+    <div
+      className={style.container}
+      data-tip={translations.tooltip.musicPlayer}
+    >
       <audio
         ref={audio}
         controls

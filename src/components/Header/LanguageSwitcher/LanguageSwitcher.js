@@ -3,9 +3,11 @@ import style from "./LanguageSwitcher.module.css";
 import Flag from "react-world-flags";
 import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Tooltip } from "../../Tooltip/Tooltip";
 
 export const LanguageSwitcher = () => {
-  const { language, switchLanguage } = useContext(LanguageContext);
+  const { language, switchLanguage, translations } =
+    useContext(LanguageContext);
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
 
@@ -16,7 +18,11 @@ export const LanguageSwitcher = () => {
   }, [language]);
 
   return (
-    <button type="button" className={style.switcher}>
+    <button
+      type="button"
+      className={style.switcher}
+      data-tip={translations.tooltip.changeLanguage}
+    >
       <i className="bx bx-chevron-left" onClick={() => switchLanguage(-1)}></i>
       <Flag
         className={style.flag}

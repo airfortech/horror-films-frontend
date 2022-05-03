@@ -1,6 +1,7 @@
-import React, { useState, useContext, useEffect, useRef } from "react";
-// import { useSearchParams } from "react-router-dom";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { gsap } from "gsap";
+import { LanguageContext } from "../../../../context/LanguageContext/LanguageContext";
+
 import style from "./SwitcherIcon.module.css";
 
 const sortModes = [
@@ -9,8 +10,8 @@ const sortModes = [
 ];
 
 export const SwitcherIcon = ({ setSearchValues }) => {
+  const { translations } = useContext(LanguageContext);
   const [sortMode, setSortMode] = useState(sortModes[0]);
-  // const [searchParams, setSearchParams] = useSearchParams();
   const ref = useRef();
   const box = gsap.utils.selector(ref);
 
@@ -26,9 +27,6 @@ export const SwitcherIcon = ({ setSearchValues }) => {
       ...prevState,
       sort_type: sortMode.type,
     }));
-    // const newSearchParams = searchParams;
-    // newSearchParams.set("sort_type", sortMode.type);
-    // setSearchParams(newSearchParams);
 
     gsap.to(box("div"), {
       scaleY: i => {
@@ -40,16 +38,19 @@ export const SwitcherIcon = ({ setSearchValues }) => {
 
   return (
     <button
+      data-tip={translations.tooltip.sortType}
+      // data-offset="{'top': 20}"
       type="button"
-      ref={ref}
       className={style.switcherIcon}
       onClick={switchCategory}
     >
-      <div className={style.box}></div>
-      <div className={style.box}></div>
-      <div className={style.box}></div>
-      <div className={style.box}></div>
-      <div className={style.box}></div>
+      <div ref={ref}>
+        <div className={style.box}></div>
+        <div className={style.box}></div>
+        <div className={style.box}></div>
+        <div className={style.box}></div>
+        <div className={style.box}></div>
+      </div>
     </button>
   );
 };

@@ -1,0 +1,23 @@
+.tooltip {
+  background: var(--header-bgcolor) !important;
+  border: 1px solid var(--third-color) !important;
+  border-radius: var(--border-radius-sm) !important;
+  opacity: 0.8 !important;
+}
+
+.tooltip:global(.place-left)::after,
+.tooltip:global(.place-left)::before {
+  border-left-color: var(--third-color) !important;
+}
+.tooltip:global(.place-right)::after,
+.tooltip:global(.place-right)::before {
+  border-right-color: var(--third-color) !important;
+}
+.tooltip:global(.place-top)::after,
+.tooltip:global(.place-top)::before {
+  border-top-color: var(--third-color) !important;
+}
+.tooltip:global(.place-bottom)::after,
+.tooltip:global(.place-bottom)::before {
+  border-bottom-color: var(--third-color) !important;
+}

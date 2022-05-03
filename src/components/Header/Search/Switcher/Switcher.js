@@ -28,12 +28,24 @@ export const Switcher = ({ setSearchValues }) => {
   }, [category]);
 
   return (
-    <button type="button" className={style.switcher}>
-      <i className="bx bx-chevron-left" onClick={() => switchCategory(-1)}></i>
-      <span onClick={() => switchCategory(1)}>
-        {translations.searchCategories[categories[category]]}
-      </span>
-      <i className="bx bx-chevron-right" onClick={() => switchCategory(1)}></i>
+    <button
+      type="button"
+      className={style.switcher}
+      data-tip={translations.tooltip.sortCategories}
+    >
+      <div>
+        <i
+          className="bx bx-chevron-left"
+          onClick={() => switchCategory(-1)}
+        ></i>
+        <span onClick={() => switchCategory(1)}>
+          {translations.searchCategories[categories[category]]}
+        </span>
+        <i
+          className="bx bx-chevron-right"
+          onClick={() => switchCategory(1)}
+        ></i>
+      </div>
     </button>
   );
 };

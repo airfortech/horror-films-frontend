@@ -20,13 +20,22 @@ export const FilmsList = () => {
   };
 
   useEffect(() => {
-    console.log("films update");
-    console.log(searchParams.toString());
+    // console.log("getfilms:");
+    // console.log(searchParams.toString(), params.lang);
+    // getFilms();
+  }, []);
+
+  useEffect(() => {
+    // console.log("films update");
+    // console.log(searchParams.toString());
     getFilms();
   }, [params.lang, searchParams]);
 
   if (!films?.films || films.count === 0) {
-    navigate(`/${params.lang}/films/no-results`);
+    console.log("sprawdzic:");
+    console.log(films);
+    /* poprawic, jakis blad z odswiezaniem */
+    // navigate(`/${params.lang}/films/no-results`);
     console.log("blabla");
     return <div></div>;
   }

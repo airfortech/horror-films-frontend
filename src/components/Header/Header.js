@@ -6,6 +6,7 @@ import { LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";
 import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
 import { Fog } from "../../effects/Fog/Fog";
 import { useLocation } from "react-router-dom";
+import { Tooltip } from "../Tooltip/Tooltip";
 
 export const Header = () => {
   const languageContext = useContext(LanguageContext);
@@ -13,6 +14,7 @@ export const Header = () => {
   const { pathname, search } = useLocation();
   return (
     <header className={style.header}>
+      <Tooltip />
       {/* <p style={{ position: "absolute" }}>{pathname + search}</p> */}
       <h1>
         <span

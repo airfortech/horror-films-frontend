@@ -25,5 +25,12 @@
     "paz",
     "lis",
     "gru"
-  ]
+  ],
+  "tooltip": {
+    "search": "Kliknij lub wciśnij enter by wyszukać",
+    "sortCategories": "Sortuje według kategorii",
+    "sortType": "Sortuj rosnąco / malejąco",
+    "changeLanguage": "Zmień język",
+    "musicPlayer": "Włącz / wyłącz muzykę w tle"
+  }
 }
