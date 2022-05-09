@@ -22,5 +22,11 @@ export const apiDomain = "http://localhost:3001/api";
 export const getFilmsUrl = apiDomain + "/films/?";
 export const getFilmsUrlParams =
   "title=&page=1&sort_type=ascending&sort_by=title";
+export const getFilmUrl = apiDomain + "/films/";
+export const getFilmUrlParams = {
+  backdrops: 10,
+  posters: 10,
+  cast: 10,
+};
 // export const getFilmsUrlParams =
 //   "title=&page=1&sort_type=ascending&sort_by=title&language=en";

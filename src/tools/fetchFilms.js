@@ -2,7 +2,7 @@ import { getFilmsUrl } from "../variables";
 
 export const fetchFilms = async params => {
   try {
-    console.log("fetchujemy film: " + getFilmsUrl + params);
+    console.log("fetchujemy filmy: " + getFilmsUrl + params);
     const res = await fetch(getFilmsUrl + params);
     // return res.json();
     const data = await res.json();
