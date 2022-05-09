@@ -1,0 +1,44 @@
+.fadingEdges {
+  width: 100%;
+  overflow-y: auto;
+
+  --scrollbar-width: 8px;
+  --mask-size-top: 0%;
+  --mask-size-bottom: 0%;
+  --mask-size-content: 100%;
+  --mask-image-content: linear-gradient(
+    to bottom,
+    transparent,
+    #000 var(--mask-size-top),
+    #000 calc(100% - var(--mask-size-bottom)),
+    transparent
+  );
+  --mask-image-scrollbar: linear-gradient(black, black);
+  --mask-size-scrollbar: var(--scrollbar-width) 100%;
+
+  mask-image: var(--mask-image-content), var(--mask-image-scrollbar);
+  mask-size: var(--mask-size-content), var(--mask-size-scrollbar);
+  mask-position: 0 0, 100% 0;
+  mask-repeat: no-repeat, no-repeat;
+
+  scrollbar-width: var(--scrollball-width);
+}
+
+.fadingEdges::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  /* display: none; */
+}
+
+.fadingEdges::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    var(--secondary-bgcolor-opacity) 0%,
+    var(--secondary-bgcolor-opacity) 50%,
+    transparent 50%,
+    transparent 100%
+  );
+}
+
+.fadingEdges::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}

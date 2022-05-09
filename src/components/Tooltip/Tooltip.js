@@ -7,8 +7,10 @@ import style from "./Tooltip.module.css";
 export const Tooltip = () => {
   const { language } = useContext(LanguageContext);
   useEffect(() => {
-    console.log("rebuild");
-    ReactTooltip.rebuild();
+    setTimeout(() => {
+      console.log("rebuild");
+      ReactTooltip.rebuild();
+    }, 500);
   }, [language]);
   return (
     <ReactTooltip

@@ -78,12 +78,9 @@ html {
 body {
   font-size: 1.6rem;
   font-family: var(--primary-font);
-  -webkit-tap-highlight-color: transparent; /* Umieszczone w body usuwa podświetlenie podczas tapnięcia na mobile */
+  -webkit-tap-highlight-color: transparent;
   color: var(--secondary-color);
   background-color: var(--primary-bgcolor);
-  background-image: url("./assets/images/bg.jpg");
-  /* background-size: contain; */
-  /* background-size: auto 100%; */
   background-position: center 200px;
   background-repeat: no-repeat;
 }

@@ -27,6 +27,7 @@ export const App = () => {
       <LanguageProvider>
         <div className={style.app}>
           <Header />
+          <Fog cover />
           <div className={style.wrapper}>
             <Routes>
               <Route
@@ -42,9 +43,8 @@ export const App = () => {
               />
               <Route path="/:lang/films/:id" element={<FilmView />} />
             </Routes>
-            <Footer />
-            <Fog cover />
           </div>
+          <Footer />
         </div>
       </LanguageProvider>
     </Router>

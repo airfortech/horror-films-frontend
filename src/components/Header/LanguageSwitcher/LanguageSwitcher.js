@@ -3,7 +3,6 @@ import style from "./LanguageSwitcher.module.css";
 import Flag from "react-world-flags";
 import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Tooltip } from "../../Tooltip/Tooltip";
 
 export const LanguageSwitcher = () => {
   const { language, switchLanguage, translations } =

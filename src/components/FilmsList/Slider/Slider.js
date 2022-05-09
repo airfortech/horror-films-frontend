@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, Mousewheel } from "swiper";
 import { gsap } from "gsap";
@@ -11,6 +11,7 @@ import style from "./Slider.module.css";
 
 export const Slider = ({ films }) => {
   console.log("odpalamy slidera");
+
   const ref = useRef(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
@@ -22,11 +23,14 @@ export const Slider = ({ films }) => {
     );
   }, [films]);
 
+  const handleResize = () => {
+    console.log("windowWidth: " + windowWidth);
+    setWindowWidth(window.innerWidth);
+  };
+
   useEffect(() => {
-    const widthListener = window.addEventListener("resize", () => {
-      setWindowWidth(window.innerWidth);
-    });
-    return () => window.removeEventListener(widthListener);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (

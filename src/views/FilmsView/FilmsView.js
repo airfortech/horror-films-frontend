@@ -17,5 +17,5 @@ export const FilmsView = () => {
     );
   }, [pathname]);
 
-  return <div>{<FilmsList ref={ref} />}</div>;
+  return <div ref={ref}>{<FilmsList />}</div>;
 };
