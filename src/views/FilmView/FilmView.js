@@ -2,8 +2,9 @@ import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { useParams } from "react-router-dom";
 import { FadeOutEdges } from "../../components/HOCs/FadeOutEdges/FadeOutEdges";
-import style from "./FilmView.module.css";
 import { fetchFilm } from "../../tools/fetchFilm";
+import { FilmDetails } from "../../components/FilmDetails/FilmDetails";
+import style from "./FilmView.module.css";
 
 export const FilmView = () => {
   const ref = useRef(null);
@@ -28,14 +29,8 @@ export const FilmView = () => {
   if (!film) return <div></div>;
 
   return (
-    <FadeOutEdges ref={ref} className={style.container} fadingSize={"80%"}>
-      <section
-        // ref={ref}
-        className={style.filmView + " " /* + style.mask */}
-        // onScroll={handleScroll}
-      >
-        <h2>Film: {id}</h2>
-      </section>
+    <FadeOutEdges ref={ref} className={style.container} fadingSize={"12%"}>
+      <FilmDetails film={film} />
     </FadeOutEdges>
   );
 };

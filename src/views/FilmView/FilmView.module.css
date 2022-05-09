@@ -3,12 +3,3 @@
   width: 100%;
   z-index: 2;
 }
-
-.filmView {
-  /* margin-bottom: var(--margin-lg); */
-  padding: 0 var(--margin-lg) 0 var(--margin-lg);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* align-items: center; */
-}
