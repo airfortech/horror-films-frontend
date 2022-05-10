@@ -1,31 +1,20 @@
-import React from "react";
-import { default as ReactModal } from "react-modal";
+import React, { useEffect, useRef, useState } from "react";
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
 import { imgBaseUrl, imgSize } from "../../../../variables";
 import style from "./Modal.module.css";
 
-ReactModal.setAppElement("#root");
-
-export const Modal = ({
-  modalIsOpen,
-  afterOpenModal,
-  closeModal,
-  src,
-  index,
-}) => {
+export const Modal = ({ modalIsOpen, closeModal, src, index }) => {
   return (
-    <ReactModal
-      isOpen={modalIsOpen}
-      onAfterOpen={afterOpenModal}
-      onRequestClose={closeModal}
-      contentLabel="Example Modal"
-      className={style.modal}
-      overlayClassName={style.overlay}
-    >
-      {/* <button onClick={closeModal}>close</button> */}
-      <img
-        src={imgBaseUrl + imgSize.w342 + src}
-        alt={"Picture number " + index}
-      />
-    </ReactModal>
+    <div>
+      {modalIsOpen && (
+        <Lightbox
+          mainSrc={imgBaseUrl + imgSize.w1280 + src}
+          onCloseRequest={closeModal}
+          wrapperClassName={style.overlay}
+          imagePadding={30}
+        ></Lightbox>
+      )}
+    </div>
   );
 };

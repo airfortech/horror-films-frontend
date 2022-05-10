@@ -35,10 +35,6 @@ export const FilmDetails = ({ film }) => {
     setImageProps({ url, index });
   }
 
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-  }
-
   function closeModal() {
     setIsOpen(false);
   }
@@ -47,7 +43,6 @@ export const FilmDetails = ({ film }) => {
     <section className={style.filmView}>
       <Modal
         modalIsOpen={modalIsOpen}
-        afterOpenModal={afterOpenModal}
         closeModal={closeModal}
         src={imageProps?.url}
         index={imageProps?.index}
