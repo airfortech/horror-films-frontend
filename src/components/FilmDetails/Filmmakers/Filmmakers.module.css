@@ -13,7 +13,7 @@
 }
 
 .filmmakers > div > p {
-  font-size: calc(var(--font-size-xl) * 1.2);
+  font-size: calc(var(--font-size-xl) * 1.4);
   color: var(--header-color);
   letter-spacing: 1px;
 }

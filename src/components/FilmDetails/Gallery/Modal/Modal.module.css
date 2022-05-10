@@ -30,10 +30,10 @@
   color: aliceblue;
 }
 
-.overlay :global(.ril__closeButton) {
-  border: 2px solid var(--secondary-bgcolor);
-  background: url("data:image/svg+xml,<svg xmlns=`http://www.w3.org/2000/svg` <path d=`m16.1926.344-4.2434.242-4.242-4.242-1.4141.414L10.53512l-4.2424.2421.4141.4144.242-4.2424.2434.2421.414-1.414L13.36412l4.242-4.242z`></path></svg>");
-  /* background-color: aliceblue; */
+.overlay button {
+  filter: brightness(0) saturate(100%) invert(51%) sepia(83%) saturate(5852%)
+    hue-rotate(342deg) brightness(95%) contrast(116%);
+  transform: scaleX(-1);
 }
 
 .modal {
