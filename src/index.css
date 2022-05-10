@@ -18,7 +18,8 @@
   --color-1: #ff2424;
   --color-2: #a70101;
   --color-2a: #a70101d2;
-  --color-2b: #a7010132;
+  --color-2b: #a70101aa;
+  --color-2c: #a7010132;
   --color-3: #333;
   --color-3a: #333;
   --color-4: #fff;
@@ -34,6 +35,7 @@
   --secondary-bgcolor: var(--color-2);
   --secondary-bgcolor-opacity: var(--color-2a);
   --secondary-bgcolor-opacity2: var(--color-2b);
+  --secondary-bgcolor-opacity3: var(--color-2c);
   --third-bgcolor: var(--color-3);
   --header-bgcolor: #000;
   --header-bgcolor-opacity: #0008;

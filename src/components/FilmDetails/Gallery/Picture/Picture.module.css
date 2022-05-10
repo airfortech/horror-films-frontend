@@ -1,0 +1,39 @@
+.picture {
+  position: relative;
+  overflow: hidden;
+}
+
+.picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform var(--transition-speed-normal) ease;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-bgcolor-opacity2);
+  transform: scale(0);
+  transition: transform var(--transition-speed-normal) ease;
+  cursor: pointer;
+}
+
+.cover i {
+  font-size: calc(var(--font-size-xl) * 2);
+}
+
+.picture:hover .cover {
+  transform: scale(1);
+}
+
+.picture:hover img {
+  transform: scale(1.1);
+}

@@ -73,8 +73,6 @@
 }
 
 .tagline {
-  /* display: flex; */
-  /* column-gap: var(--margin-sm); */
   font-style: italic;
   opacity: 0.8;
 }

@@ -15,7 +15,7 @@
 
 .slider :global(.swiper-scrollbar) {
   bottom: -27px;
-  background-color: var(--secondary-bgcolor-opacity2);
+  background-color: var(--secondary-bgcolor-opacity3);
   background-color: transparent;
   /* border-radius: 0; */
 }

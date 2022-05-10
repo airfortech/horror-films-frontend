@@ -1,5 +1,8 @@
 import React from "react";
 import { Header } from "./Header/Header";
+import { Filmmakers } from "./Filmmakers/Filmmakers";
+import { Cast } from "./Cast/Cast";
+import { Gallery } from "./Gallery/Gallery";
 import style from "./FilmDetails.module.css";
 
 export const FilmDetails = ({ film }) => {
@@ -15,6 +18,11 @@ export const FilmDetails = ({ film }) => {
     revenue,
     poster_path,
     overview,
+    directors,
+    screenplay,
+    cast,
+    backdrops,
+    posters,
   } = film;
   console.log(title);
   return (
@@ -36,6 +44,10 @@ export const FilmDetails = ({ film }) => {
         poster_path={poster_path}
         overview={overview}
       />
+      <Filmmakers directors={directors} screenplay={screenplay} />
+      <Cast cast={cast} />
+      <Gallery items={backdrops} title="Gallery" />
+      <Gallery items={posters} title="Posters" />
     </section>
   );
 };

@@ -1,18 +1,19 @@
-.cast {
+.gallery {
   display: flex;
   flex-direction: column;
   gap: var(--margin-md);
 }
 
-.cast > p {
+.gallery > p {
   font-size: calc(var(--font-size-xl) * 1.2);
   color: var(--header-color);
   letter-spacing: 1px;
 }
-.cast > ul {
+
+.gallery > ul {
   display: grid;
   justify-content: space-between;
-  grid-template-columns: repeat(auto-fill, 120px);
-  gap: var(--margin-md);
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  /* gap: var(--margin-md); */
   list-style: none;
 }
