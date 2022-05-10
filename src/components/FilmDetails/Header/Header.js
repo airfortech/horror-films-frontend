@@ -64,9 +64,9 @@ export const Header = ({
           </p>
         </div>
         <p className={style.overview}>
-          <i class="bx bxs-quote-right"></i>
+          <i className="bx bxs-quote-right"></i>
           {overview}
-          <i class="bx bxs-quote-right"></i>
+          <i className="bx bxs-quote-right"></i>
         </p>
       </div>
     </header>

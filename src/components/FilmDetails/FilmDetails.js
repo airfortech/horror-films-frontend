@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Header } from "./Header/Header";
 import { Filmmakers } from "./Filmmakers/Filmmakers";
 import { Cast } from "./Cast/Cast";
 import { Gallery } from "./Gallery/Gallery";
+import { Modal } from "./Gallery/Modal/Modal";
 import style from "./FilmDetails.module.css";
 
 export const FilmDetails = ({ film }) => {
@@ -25,12 +26,32 @@ export const FilmDetails = ({ film }) => {
     posters,
   } = film;
   console.log(title);
+
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [imageProps, setImageProps] = useState(null);
+
+  function openModal(url, index) {
+    setIsOpen(true);
+    setImageProps({ url, index });
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   return (
-    <section
-      // ref={ref}
-      className={style.filmView + " " /* + style.mask */}
-      // onScroll={handleScroll}
-    >
+    <section className={style.filmView}>
+      <Modal
+        modalIsOpen={modalIsOpen}
+        afterOpenModal={afterOpenModal}
+        closeModal={closeModal}
+        src={imageProps?.url}
+        index={imageProps?.index}
+      />
       <Header
         title={title}
         release_date={release_date}
@@ -46,8 +67,8 @@ export const FilmDetails = ({ film }) => {
       />
       <Filmmakers directors={directors} screenplay={screenplay} />
       <Cast cast={cast} />
-      <Gallery items={backdrops} title="Gallery" />
-      <Gallery items={posters} title="Posters" />
+      <Gallery items={backdrops} title="Gallery" openModal={openModal} />
+      <Gallery items={posters} title="Posters" openModal={openModal} />
     </section>
   );
 };

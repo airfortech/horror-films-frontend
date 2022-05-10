@@ -1,8 +1,7 @@
 .filmView {
-  /* margin-bottom: var(--margin-lg); */
   padding: 0 var(--margin-lg) 0 var(--margin-lg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  row-gap: var(--margin-lg);
+  row-gap: var(--margin-xl);
 }

@@ -7,7 +7,7 @@ export const Footer = () => {
     <footer className={style.footer}>
       <p>© 2022 by airm</p>
       <a href="https://github.com/airfortech">
-        <i class="bx bxl-github"></i>
+        <i className="bx bxl-github"></i>
         <p>Source code</p>
       </a>
       <a href="https://github.com/airfortech">
