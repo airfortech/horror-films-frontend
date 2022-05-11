@@ -1,0 +1,44 @@
+.videoPlayerSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-md);
+}
+
+.videoPlayerSection > p {
+  font-size: calc(var(--font-size-xl) * 1.4);
+  color: var(--header-color);
+  letter-spacing: 1px;
+}
+
+.videoPlayerSection > div {
+  max-width: 60vh;
+  border: 3px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.videoPlayerSection > :global(div) :global(vm-icon) {
+  background: red !important;
+  display: none !important;
+}
+
+:global(vm-player) {
+  --vm-icon-fill: var(--header-color);
+  --vm-time-color: var(--header-color);
+  --vm-time-font-weight: 500;
+  --vm-slider-value-color: var(--secondary-bgcolor);
+  --vm-slider-track-color: var(--secondary-bgcolor-opacity3);
+  --vm-slider-thumb-bg: var(--header-color);
+  --vm-scrubber-buffered-bg: var(--secondary-bgcolor-opacity3);
+  /* --vm-spinner-fill-color: red; */
+  /* --vm-spinner-track-color: red; */
+  /* --vm-scrim-bg: red; */
+  --vm-tooltip-color: transparent;
+  --vm-tooltip-bg: transparent;
+  --vm-menu-bg: var(--secondary-bgcolor-opacity3);
+  --vm-menu-item-focus-bg: var(--secondary-bgcolor-opacity);
+
+  --vm-color-white-200: var(--secondary-bgcolor-opacity2);
+  --vm-tooltip-border-radius: 0;
+  --vm-tooltip-box-shadow: none;
+}

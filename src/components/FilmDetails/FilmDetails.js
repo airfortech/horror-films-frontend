@@ -4,6 +4,7 @@ import { Filmmakers } from "./Filmmakers/Filmmakers";
 import { Cast } from "./Cast/Cast";
 import { Gallery } from "./Gallery/Gallery";
 import { Modal } from "./Gallery/Modal/Modal";
+import { VideoPlayer } from "./VideoPlayer/VideoPlayer";
 import style from "./FilmDetails.module.css";
 
 export const FilmDetails = ({ film }) => {
@@ -24,6 +25,7 @@ export const FilmDetails = ({ film }) => {
     cast,
     backdrops,
     posters,
+    video_url,
   } = film;
   console.log(title);
 
@@ -62,6 +64,7 @@ export const FilmDetails = ({ film }) => {
       />
       <Filmmakers directors={directors} screenplay={screenplay} />
       <Cast cast={cast} />
+      <VideoPlayer src={video_url} />
       <Gallery items={backdrops} title="Gallery" openModal={openModal} />
       <Gallery items={posters} title="Posters" openModal={openModal} />
     </section>

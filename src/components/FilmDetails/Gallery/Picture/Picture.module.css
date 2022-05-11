@@ -28,6 +28,7 @@
 
 .cover i {
   font-size: calc(var(--font-size-xl) * 2);
+  color: var(--header-color);
 }
 
 .picture:hover .cover {
