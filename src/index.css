@@ -73,6 +73,10 @@
 
   --card-info-height: 90px;
   --card-more-info-height: 300px;
+
+  --film-poster-size: auto;
+
+  --gallery-picture-size: 220px;
 }
 
 html {
@@ -101,6 +105,14 @@ button {
 
 input {
   font-family: inherit;
+}
+
+@media (max-width: 576px) {
+  :root {
+    --font-size-xxl: 4rem;
+    --gallery-picture-size: 140px;
+    --film-poster-size: 120px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -132,11 +144,5 @@ input {
 
     --card-info-height: 76px;
     --card-more-info-height: 200px;
-  }
-}
-
-@media (max-width: 576px) {
-  :root {
-    --font-size-xxl: 4rem;
   }
 }

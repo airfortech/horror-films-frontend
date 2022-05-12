@@ -63,10 +63,14 @@ export const FilmDetails = ({ film }) => {
         overview={overview}
       />
       <Filmmakers directors={directors} screenplay={screenplay} />
-      <Cast cast={cast} />
-      <VideoPlayer src={video_url} />
-      <Gallery items={backdrops} title="Gallery" openModal={openModal} />
-      <Gallery items={posters} title="Posters" openModal={openModal} />
+      {cast.length > 0 && <Cast cast={cast} />}
+      {video_url && <VideoPlayer src={video_url} />}
+      {backdrops.length > 0 && (
+        <Gallery items={backdrops} title="Gallery" openModal={openModal} />
+      )}
+      {posters.length > 0 && (
+        <Gallery items={posters} title="Posters" openModal={openModal} />
+      )}
     </section>
   );
 };

@@ -27,6 +27,10 @@ export const Card = props => {
     return windowWidth > 560 ? cutText(text, 200) : cutText(text, 80);
   };
 
+  const generateURL = (id, title) => {
+    return `${id}-${title}`.replace(/\s+/g, "-");
+  };
+
   return (
     <div
       className={style.card}
@@ -52,7 +56,10 @@ export const Card = props => {
           <p className={style.date}>{date}</p>
           <p className={style.title}>{cutText(title, 60)}</p>
           <p className={style.overview}>{cutOvierviewText(overview)}</p>
-          <Link to={`/${lang}/films/${id}`} className={style.moreInfo}>
+          <Link
+            to={`/${lang}/films/${generateURL(id, title)}`}
+            className={style.moreInfo}
+          >
             <p>{translations.cardMoreInfoButton}</p>
           </Link>
         </div>

@@ -1,7 +1,7 @@
 .header {
   display: flex;
+  /* flex-direction: column; */
   column-gap: var(--margin-lg);
-  /* justify-content: center; */
 }
 
 .info {
@@ -36,12 +36,16 @@
 .img {
   border-radius: var(--border-radius-md);
   border: 8px solid var(--secondary-bgcolor-opacity);
+  align-self: start;
+  width: var(--film-poster-size);
+  /* display: none; */
 }
 
 .vote {
   display: flex;
   column-gap: var(--margin-sm);
   align-items: center;
+  margin: var(--margin-xl) 0;
 }
 
 .vote p:first-child {

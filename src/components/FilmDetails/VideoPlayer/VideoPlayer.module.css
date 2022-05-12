@@ -11,15 +11,20 @@
 }
 
 .videoPlayerSection > div {
+  position: relative;
   max-width: 60vh;
   border: 3px solid var(--primary-color);
   border-radius: var(--border-radius-sm);
   overflow: hidden;
 }
 
-.videoPlayerSection > :global(div) :global(vm-icon) {
-  background: red !important;
-  display: none !important;
+.overlay {
+  display: block;
+  position: absolute;
+  width: 60vh;
+  height: 100%;
+  background-color: var(--header-bgcolor);
+  z-index: 1;
 }
 
 :global(vm-player) {
@@ -41,4 +46,8 @@
   --vm-color-white-200: var(--secondary-bgcolor-opacity2);
   --vm-tooltip-border-radius: 0;
   --vm-tooltip-box-shadow: none;
+}
+
+:global(.ytp-pause-overlay.ytp-scroll-min) {
+  display: none !important;
 }

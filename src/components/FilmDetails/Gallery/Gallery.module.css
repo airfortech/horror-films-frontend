@@ -13,7 +13,9 @@
 .gallery > ul {
   display: grid;
   justify-content: space-between;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  /* gap: var(--margin-md); */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--gallery-picture-size), 1fr)
+  );
   list-style: none;
 }
