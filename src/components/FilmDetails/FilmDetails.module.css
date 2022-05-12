@@ -3,5 +3,5 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  row-gap: calc(var(--margin-xl) * 2);
+  row-gap: calc(var(--margin-xl) * 1.5);
 }

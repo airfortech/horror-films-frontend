@@ -7,7 +7,7 @@ import { useParams, useSearchParams, useNavigate } from "react-router-dom";
 
 export const FilmsList = () => {
   const [films, setFilms] = useState("");
-  console.log("Odpalamy filmlist");
+  console.log("Odpalamy filmslist");
   const [searchParams] = useSearchParams();
   const params = useParams();
   const navigate = useNavigate();
@@ -17,26 +17,18 @@ export const FilmsList = () => {
     newSearchParams.set("language", params.lang);
     const newFilms = await fetchFilms(newSearchParams.toString());
     setFilms(newFilms);
+    return newFilms.count;
   };
 
   useEffect(() => {
-    // console.log("getfilms:");
-    // console.log(searchParams.toString(), params.lang);
-    // getFilms();
-  }, []);
-
-  useEffect(() => {
-    // console.log("films update");
-    // console.log(searchParams.toString());
-    getFilms();
+    (async function () {
+      const result = await getFilms();
+      console.log(result);
+      if (!result) navigate(`/${params.lang}/films/no-results`);
+    })();
   }, [params.lang, searchParams]);
 
   if (!films?.films || films.count === 0) {
-    console.log("sprawdzic:");
-    console.log(films);
-    /* poprawic, jakis blad z odswiezaniem */
-    // navigate(`/${params.lang}/films/no-results`);
-    console.log("blabla");
     return <div></div>;
   }
   return (

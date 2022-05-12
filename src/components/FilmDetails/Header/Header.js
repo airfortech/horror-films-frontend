@@ -1,6 +1,7 @@
 import React from "react";
 import { imgPosterUrl } from "../../../variables";
 import { minutesToHours } from "../../../tools/minutesToHours";
+import { formatCurrency } from "../../../tools/formatCurrency";
 import style from "./Header.module.css";
 
 export const Header = ({
@@ -46,27 +47,17 @@ export const Header = ({
         <p>Oryginal title:</p>
         <p> {original_title}</p>
         <p>Budget: </p>
-        <p>
-          {" "}
-          {new Intl.NumberFormat("en-us", {
-            currency: "USD",
-            style: "currency",
-          }).format(budget)}
-        </p>
+        <p>{formatCurrency(revenue)}</p>
         <p>Revenue:</p>
-        <p>
-          {" "}
-          {new Intl.NumberFormat("en-us", {
-            currency: "USD",
-            style: "currency",
-          }).format(revenue)}
-        </p>
+        <p>{formatCurrency(revenue)}</p>
       </div>
-      <p className={style.overview}>
-        <i className="bx bxs-quote-right"></i>
-        {overview}
-        <i className="bx bxs-quote-right"></i>
-      </p>
+      {overview && (
+        <p className={style.overview}>
+          <i className="bx bxs-quote-right"></i>
+          {overview}
+          <i className="bx bxs-quote-right"></i>
+        </p>
+      )}
     </header>
   );
 };

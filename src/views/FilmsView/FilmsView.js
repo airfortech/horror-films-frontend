@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { FilmsList } from "../../components/FilmsList/FilmsList";
 import { useLocation } from "react-router-dom";
+import style from "./FilmsView.module.css";
 
 export const FilmsView = () => {
   const ref = useRef(null);
@@ -17,5 +18,9 @@ export const FilmsView = () => {
     );
   }, [pathname]);
 
-  return <div ref={ref}>{<FilmsList />}</div>;
+  return (
+    <div className={style.filmsView} ref={ref}>
+      {<FilmsList />}
+    </div>
+  );
 };
