@@ -74,9 +74,13 @@
   --card-info-height: 90px;
   --card-more-info-height: 300px;
 
-  --film-poster-size: auto;
+  --film-poster-size: 30%;
+  --film-poster-border: 8px solid var(--secondary-bgcolor-opacity);
+  --film-poster-border-radius: var(--border-radius-sm);
 
   --gallery-picture-size: 220px;
+
+  --person-size: minmax(120px, 1fr);
 }
 
 html {
@@ -111,7 +115,10 @@ input {
   :root {
     --font-size-xxl: 4rem;
     --gallery-picture-size: 140px;
-    --film-poster-size: 120px;
+
+    --film-poster-border: 4px solid var(--secondary-bgcolor-opacity);
+
+    --person-size: 30%;
   }
 }
 

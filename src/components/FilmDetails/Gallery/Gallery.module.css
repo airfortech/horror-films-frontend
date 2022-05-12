@@ -18,4 +18,5 @@
     minmax(var(--gallery-picture-size), 1fr)
   );
   list-style: none;
+  gap: 2px;
 }

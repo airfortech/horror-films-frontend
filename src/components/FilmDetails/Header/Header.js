@@ -25,50 +25,48 @@ export const Header = ({
           alt={title + " poster"}
         ></img>
       )}
-      <div className={style.info}>
-        <div className={style.mainInfo}>
-          <h2>{title}</h2>
-          <div>
-            <p>{release_date.split("-").reverse().join(".")}</p>
-            <p>{minutesToHours(runtime)}</p>
-          </div>
-          <p>{genres.join(", ")}</p>
+      <div className={style.mainInfo}>
+        <h2>{title}</h2>
+        <div>
+          <p>{release_date.split("-").reverse().join(".")}</p>
+          <p>{minutesToHours(runtime)}</p>
         </div>
+        <p>{genres.join(", ")}</p>
+      </div>
 
-        {tagline && <p className={style.tagline}>{tagline}</p>}
-        <div className={style.vote}>
-          <p>
-            {vote_average * 10}
-            <span>%</span>
-          </p>
-          <p>Ocena użytkowników</p>
-        </div>
-        <div className={style.secondaryInfo}>
-          <p>Oryginal title:</p>
-          <p> {original_title}</p>
-          <p>Budget: </p>
-          <p>
-            {" "}
-            {new Intl.NumberFormat("en-us", {
-              currency: "USD",
-              style: "currency",
-            }).format(budget)}
-          </p>
-          <p>Revenue:</p>
-          <p>
-            {" "}
-            {new Intl.NumberFormat("en-us", {
-              currency: "USD",
-              style: "currency",
-            }).format(revenue)}
-          </p>
-        </div>
-        <p className={style.overview}>
-          <i className="bx bxs-quote-right"></i>
-          {overview}
-          <i className="bx bxs-quote-right"></i>
+      {tagline && <p className={style.tagline}>{tagline}</p>}
+      <div className={style.vote}>
+        <p>
+          {vote_average * 10}
+          <span>%</span>
+        </p>
+        <p>Ocena użytkowników</p>
+      </div>
+      <div className={style.secondaryInfo}>
+        <p>Oryginal title:</p>
+        <p> {original_title}</p>
+        <p>Budget: </p>
+        <p>
+          {" "}
+          {new Intl.NumberFormat("en-us", {
+            currency: "USD",
+            style: "currency",
+          }).format(budget)}
+        </p>
+        <p>Revenue:</p>
+        <p>
+          {" "}
+          {new Intl.NumberFormat("en-us", {
+            currency: "USD",
+            style: "currency",
+          }).format(revenue)}
         </p>
       </div>
+      <p className={style.overview}>
+        <i className="bx bxs-quote-right"></i>
+        {overview}
+        <i className="bx bxs-quote-right"></i>
+      </p>
     </header>
   );
 };

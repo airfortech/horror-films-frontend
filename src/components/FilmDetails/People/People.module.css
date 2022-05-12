@@ -12,7 +12,7 @@
 .cast > ul {
   display: grid;
   justify-content: space-between;
-  grid-template-columns: repeat(auto-fill, 120px);
+  grid-template-columns: repeat(auto-fill, var(--person-size));
   gap: var(--margin-md);
   list-style: none;
 }
