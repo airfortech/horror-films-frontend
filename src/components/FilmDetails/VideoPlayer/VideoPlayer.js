@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Player, Youtube, DefaultUi, DefaultSettings } from "@vime/react";
+import React, { useEffect, useRef, useState, useContext } from "react";
+import { Player, Youtube, DefaultUi } from "@vime/react";
 import { gsap } from "gsap";
+import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
 import "@vime/core/themes/default.css";
 import style from "./VideoPlayer.module.css";
 
@@ -8,6 +9,8 @@ export const VideoPlayer = ({ src }) => {
   const playerRef = useRef(null);
   const overlayRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const { translations } = useContext(LanguageContext);
+
   useEffect(() => {
     console.log("player: " + isPlaying);
     if (isPlaying) {
@@ -37,15 +40,16 @@ export const VideoPlayer = ({ src }) => {
   }, [isPlaying]);
   return (
     <div className={style.videoPlayerSection}>
-      <p>Trailer</p>
+      <p>{translations.filmDetails.trailer}</p>
       <div>
         <div className={style.overlay} ref={overlayRef}></div>
         <Player
           className={style.player}
           ref={playerRef}
           onVmPausedChange={() => setIsPlaying(!playerRef.current.paused)}
+          src={src}
         >
-          <Youtube videoId={src} />
+          <Youtube videoId={src} src={src} />
           <DefaultUi />
         </Player>
       </div>

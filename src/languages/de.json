@@ -3,6 +3,19 @@
     "firstLine": "90er",
     "secondLine": "Horror-Filme"
   },
+  "filmDetails": {
+    "usersRating": "Benutzerbewertung",
+    "originalTitle": "Originaler Titel",
+    "budget": "Budget",
+    "revenue": "Einspielergebnis",
+    "direction": "Richtung",
+    "screenplay": "Szenario",
+    "cast": "Hauptdarsteller",
+    "trailer": "Video",
+    "gallery": "Galerie",
+    "posters": "Plakate",
+    "noInfo": "Keine Informationen"
+  },
   "searchInput": "Suche...",
   "searchCategories": {
     "title": "titel",

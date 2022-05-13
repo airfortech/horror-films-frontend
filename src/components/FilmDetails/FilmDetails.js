@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Header } from "./Header/Header";
 import { People } from "./People/People";
 import { Gallery } from "./Gallery/Gallery";
 import { Modal } from "./Gallery/Modal/Modal";
 import { VideoPlayer } from "./VideoPlayer/VideoPlayer";
+import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
 import style from "./FilmDetails.module.css";
 
 export const FilmDetails = ({ film }) => {
@@ -30,6 +31,7 @@ export const FilmDetails = ({ film }) => {
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [imageProps, setImageProps] = useState(null);
+  const { translations } = useContext(LanguageContext);
 
   function openModal(url, index) {
     setIsOpen(true);
@@ -63,18 +65,34 @@ export const FilmDetails = ({ film }) => {
           overview={overview}
         />
         {directors.length > 0 && (
-          <People title="Direction" people={directors} />
+          <People
+            title={translations.filmDetails.direction}
+            people={directors}
+          />
         )}
         {screenplay.length > 0 && (
-          <People title="Screenplay" people={screenplay} />
+          <People
+            title={translations.filmDetails.screenplay}
+            people={screenplay}
+          />
         )}
-        {cast.length > 0 && <People title="Cast" people={cast} />}
+        {cast.length > 0 && (
+          <People title={translations.filmDetails.cast} people={cast} />
+        )}
         {video_url && <VideoPlayer src={video_url} />}
         {backdrops.length > 0 && (
-          <Gallery items={backdrops} title="Gallery" openModal={openModal} />
+          <Gallery
+            items={backdrops}
+            title={translations.filmDetails.gallery}
+            openModal={openModal}
+          />
         )}
         {posters.length > 0 && (
-          <Gallery items={posters} title="Posters" openModal={openModal} />
+          <Gallery
+            items={posters}
+            title={translations.filmDetails.posters}
+            openModal={openModal}
+          />
         )}
       </section>
     </div>

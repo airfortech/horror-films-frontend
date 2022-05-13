@@ -3,6 +3,19 @@
     "firstLine": "Horrory",
     "secondLine": "Z Lat  90"
   },
+  "filmDetails": {
+    "usersRating": "Ocena użytkowników",
+    "originalTitle": "Tytuł oryginalny",
+    "budget": "Budżet",
+    "revenue": "Dochód",
+    "direction": "Reżyseria",
+    "screenplay": "Scenariusz",
+    "cast": "Obsada",
+    "trailer": "Zapowiedź Wideo",
+    "gallery": "Galeria",
+    "posters": "Plakaty",
+    "noInfo": "Brak danych"
+  },
   "searchInput": "Szukaj...",
   "searchCategories": {
     "title": "tytuł",

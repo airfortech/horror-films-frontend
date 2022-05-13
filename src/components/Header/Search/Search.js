@@ -40,14 +40,11 @@ export const Search = () => {
           placeholder={translations.searchInput}
           value={searchValues.title}
           onChange={handleInputChange}
-          // id="exampleInputEmail1"
-          // aria-describedby="emailHelp"
         />
         <button
           type="submit"
           className={style.inputSubmit}
           data-tip={translations.tooltip.search}
-          // data-offset="{'top': 11}"
         >
           <i className={`bx bx-search-alt ${style.hovered}`}></i>
           <i className="bx bx-search"></i>

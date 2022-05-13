@@ -3,6 +3,19 @@
     "firstLine": "90's",
     "secondLine": "Horror Films"
   },
+  "filmDetails": {
+    "usersRating": "Users rating",
+    "originalTitle": "Original title",
+    "budget": "Budget",
+    "revenue": "Revenue",
+    "direction": "Direction",
+    "screenplay": "Screenplay",
+    "cast": "Cast",
+    "trailer": "Trailer",
+    "gallery": "Gallery",
+    "posters": "Posters",
+    "noInfo": "No info"
+  },
   "searchInput": "Search...",
   "searchCategories": {
     "title": "title",

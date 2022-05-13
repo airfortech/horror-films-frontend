@@ -24,7 +24,7 @@ export const Card = props => {
   const date = convertDate(release_date, translations.months);
 
   const cutOvierviewText = text => {
-    return windowWidth > 560 ? cutText(text, 200) : cutText(text, 80);
+    return windowWidth > 560 ? cutText(text, 180) : cutText(text, 80);
   };
 
   const generateURL = (id, title) => {

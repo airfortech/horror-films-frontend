@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { imgPosterUrl } from "../../../variables";
 import { minutesToHours } from "../../../tools/minutesToHours";
 import { formatCurrency } from "../../../tools/formatCurrency";
+import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
 import style from "./Header.module.css";
 
 export const Header = ({
@@ -17,6 +18,8 @@ export const Header = ({
   poster_path,
   overview,
 }) => {
+  const { translations } = useContext(LanguageContext);
+
   return (
     <header className={style.header}>
       {poster_path && (
@@ -41,15 +44,19 @@ export const Header = ({
           {vote_average * 10}
           <span>%</span>
         </p>
-        <p>Ocena użytkowników</p>
+        <p>{translations.filmDetails.usersRating}</p>
       </div>
       <div className={style.secondaryInfo}>
-        <p>Oryginal title:</p>
+        <p>{translations.filmDetails.originalTitle}:</p>
         <p> {original_title}</p>
-        <p>Budget: </p>
-        <p>{formatCurrency(revenue)}</p>
-        <p>Revenue:</p>
-        <p>{formatCurrency(revenue)}</p>
+        <p>{translations.filmDetails.budget}: </p>
+        <p>
+          {budget ? formatCurrency(budget) : translations.filmDetails.noInfo}
+        </p>
+        <p>{translations.filmDetails.revenue}:</p>
+        <p>
+          {revenue ? formatCurrency(revenue) : translations.filmDetails.noInfo}
+        </p>
       </div>
       {overview && (
         <p className={style.overview}>
