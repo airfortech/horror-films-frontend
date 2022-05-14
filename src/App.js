@@ -3,12 +3,12 @@ import { Footer } from "./components/Footer/Footer";
 import { FilmsView } from "./views/FilmsView/FilmsView";
 import { FilmView } from "./views/FilmView/FilmView";
 import { NoResultsView } from "./views/NoResultsView/NoResultsView";
+import { NotFoundView } from "./views/NotFoundView/NotFoundView";
 import { LanguageProvider } from "./context/LanguageContext/LanguageContext";
 import { Fog } from "./effects/Fog/Fog";
 import style from "./App.module.css";
 import { bats } from "./effects/bats/bats";
 import { useEffect } from "react";
-// import { QueryProvider } from "./context/QueryContext/QueryContext";
 import {
   BrowserRouter as Router,
   Routes,
@@ -16,7 +16,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import { getFilmsUrlParams } from "./variables";
-import { FilmsList } from "./components/FilmsList/FilmsList";
 
 export const App = () => {
   useEffect(() => {
@@ -42,6 +41,7 @@ export const App = () => {
                 element={<NoResultsView />}
               />
               <Route path="/:lang/films/:id" element={<FilmView />} />
+              <Route path="*" element={<NotFoundView />} />
             </Routes>
           </div>
           <Footer />

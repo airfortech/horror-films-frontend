@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, Mousewheel } from "swiper";
 import { gsap } from "gsap";
 import { Card } from "./Card/Card";
-
+import { useParams } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/lazy";
 import "swiper/css/scrollbar";
@@ -11,17 +11,18 @@ import style from "./Slider.module.css";
 
 export const Slider = ({ films }) => {
   console.log("odpalamy slidera");
+  const { lang } = useParams();
 
   const ref = useRef(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
-    console.log("Animations");
+    console.log("Animations: " + lang);
     gsap.fromTo(
       ref.current,
       { opacity: 0 },
       { opacity: 1, duration: 0.8, ease: "sine.in" }
     );
-  }, [films]);
+  }, [lang, films]);
 
   const handleResize = () => {
     console.log("windowWidth: " + windowWidth);

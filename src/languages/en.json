@@ -24,6 +24,7 @@
     "popularity": "popularity"
   },
   "noFilmsFound": "No films found.",
+  "notFoundView": "Oops! We can't find the page you're looking for.",
   "cardMoreInfoButton": "More info...",
   "months": [
     "jan",

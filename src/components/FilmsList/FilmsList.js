@@ -9,24 +9,29 @@ export const FilmsList = () => {
   const [films, setFilms] = useState("");
   console.log("Odpalamy filmslist");
   const [searchParams] = useSearchParams();
-  const params = useParams();
+  const { lang } = useParams();
   const navigate = useNavigate();
 
   const getFilms = async () => {
-    const newSearchParams = searchParams;
-    newSearchParams.set("language", params.lang);
-    const newFilms = await fetchFilms(newSearchParams.toString());
-    setFilms(newFilms);
-    return newFilms.count;
+    try {
+      const newSearchParams = searchParams;
+      newSearchParams.set("language", lang);
+      const newFilms = await fetchFilms(newSearchParams.toString());
+      setFilms(newFilms);
+      return newFilms.count;
+    } catch (error) {
+      navigate(`/${lang}/films/no-results`);
+    }
   };
 
   useEffect(() => {
     (async function () {
       const result = await getFilms();
       console.log(result);
-      if (!result) navigate(`/${params.lang}/films/no-results`);
+      if (!result) navigate(`/${lang}/films/no-results`);
     })();
-  }, [params.lang, searchParams]);
+    console.log("blaxx");
+  }, [lang, searchParams]);
 
   if (!films?.films || films.count === 0) {
     return <div></div>;

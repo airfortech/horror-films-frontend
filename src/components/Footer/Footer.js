@@ -10,7 +10,7 @@ export const Footer = () => {
         <i className="bx bxl-github"></i>
         <p>Source code</p>
       </a>
-      <a href="https://github.com/airfortech">
+      <a href="https://www.themoviedb.org">
         <img src={tmdbLogo} alt="www.themoviedb.org logo" />
       </a>
     </footer>
