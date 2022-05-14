@@ -131,7 +131,7 @@
   content: attr(data-text);
   position: absolute;
   left: -2px;
-  text-shadow: 1px 0 blue;
+  text-shadow: 1px 0 rgb(0, 0, 0);
   top: 0;
   color: var(--header-color);
   overflow: hidden;

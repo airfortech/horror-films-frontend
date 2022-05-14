@@ -27,7 +27,7 @@ export const getFilmsUrlParams =
 export const getFilmUrl = apiDomain + "/films/";
 export const getFilmUrlParams = {
   backdrops: 20,
-  posters: 10,
+  posters: 6,
   cast: 10,
 };
 // export const getFilmsUrlParams =
