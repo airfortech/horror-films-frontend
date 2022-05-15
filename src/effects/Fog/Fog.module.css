@@ -19,7 +19,7 @@
 }
 .foglayer_01 .image01,
 .foglayer_01 .image02 {
-  background: url("../../assets/images/fog1-c.png") repeat top left transparent;
+  background: url("../../assets/images/fog3.png") repeat top left transparent;
   background-size: 100%;
   width: 50%;
   height: 100%;
@@ -37,7 +37,7 @@
 }
 .foglayer_02 .image01,
 .foglayer_02 .image02 {
-  background: url("../../assets/images/fog1-d.png") repeat center center
+  background: url("../../assets/images/fog4.png") repeat center center
     transparent;
   background-size: 100%;
   width: 50%;
@@ -56,7 +56,7 @@
 }
 .foglayer_03 .image01,
 .foglayer_03 .image02 {
-  background: url("../../assets/images/fog1-d.png") repeat top left transparent;
+  background: url("../../assets/images/fog4.png") repeat top left transparent;
   background-size: 100%;
   width: 50%;
   height: 100%;
