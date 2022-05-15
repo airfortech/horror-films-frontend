@@ -26,7 +26,7 @@ export const App = () => {
       <LanguageProvider>
         <div className={style.app}>
           <Header />
-          <Fog cover />
+          <Fog opacity={1} />
           <div className={style.wrapper}>
             <Routes>
               <Route

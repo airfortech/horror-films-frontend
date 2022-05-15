@@ -35,7 +35,7 @@ export const Header = () => {
         <LanguageSwitcher />
       </div>
       <Search />
-      <Fog />
+      <Fog opacity={1} />
     </header>
   );
 };

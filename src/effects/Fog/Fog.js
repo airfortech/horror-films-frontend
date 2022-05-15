@@ -1,8 +1,8 @@
 import style from "./Fog.module.css";
 
-export const Fog = props => {
+export const Fog = ({ opacity }) => {
   return (
-    <div className={style.fogwrapper + (props.cover ? " " + style.cover : "")}>
+    <div className={style.fogwrapper} style={{ opacity }}>
       <div className={style.foglayer_01}>
         <div className={style.image01}></div>
         <div className={style.image02}></div>

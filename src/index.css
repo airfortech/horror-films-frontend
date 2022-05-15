@@ -93,6 +93,8 @@
   --search-form-padding: var(--margin-sm);
   --search-size: 145px;
   --switcher-size: 135px;
+
+  --fog-opacity: 0.5;
 }
 
 html {
