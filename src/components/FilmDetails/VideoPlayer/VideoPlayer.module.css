@@ -19,7 +19,7 @@
 }
 
 .overlay {
-  display: block;
+  display: none;
   position: absolute;
   width: 60vh;
   height: 100%;
@@ -50,4 +50,10 @@
 
 :global(.ytp-pause-overlay.ytp-scroll-min) {
   display: none !important;
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .overlay {
+    display: none !important;
+  }
 }

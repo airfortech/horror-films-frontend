@@ -1,7 +1,7 @@
 .switcher {
   border: none;
   margin: auto var(--margin-sm);
-  width: 135px;
+  width: var(--switcher-size);
   height: 100%;
   color: var(--third-color);
   font-size: var(--font-size-md);

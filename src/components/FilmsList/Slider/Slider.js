@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Scrollbar, Mousewheel } from "swiper";
+import { Scrollbar, Mousewheel, FreeMode } from "swiper";
 import { gsap } from "gsap";
 import { Card } from "./Card/Card";
 import { useParams } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/lazy";
 import "swiper/css/scrollbar";
+import "swiper/css/free-mode";
 import style from "./Slider.module.css";
 
 export const Slider = ({ films }) => {
@@ -37,7 +38,7 @@ export const Slider = ({ films }) => {
   return (
     <div ref={ref} className={style.slider + " " + style.mask}>
       <Swiper
-        modules={[Scrollbar, Mousewheel]}
+        modules={[Scrollbar, Mousewheel, FreeMode]}
         spaceBetween={20}
         // slidesPerView={3}
         /* strzałki nawigacyjne */
@@ -46,6 +47,7 @@ export const Slider = ({ films }) => {
         slidesPerView="auto"
         /* liczba slajdów, o które ma przewijać się slajder */
         slidesPerGroup={1}
+        freeMode={true}
         /* "horizontal" lub "vertical" */
         direction="horizontal"
         // gridRows={2}

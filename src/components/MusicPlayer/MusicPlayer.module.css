@@ -25,6 +25,7 @@
 }
 
 .player input {
+  display: var(--player-volume-display);
   margin-left: var(--margin-sm);
   width: 5 0px;
 }

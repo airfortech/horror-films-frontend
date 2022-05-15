@@ -9,7 +9,7 @@ export const MusicPlayer = () => {
 
   const audio = useRef(null);
   const [isPlaying, setIsPLaying] = useState(false);
-  const [volume, setVolume] = useState(0);
+  const [volume, setVolume] = useState(20);
 
   const handlePlayMusic = () => {
     isPlaying ? audio.current.pause() : audio.current.play();

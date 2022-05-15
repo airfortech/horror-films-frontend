@@ -1,5 +1,5 @@
 .footer {
-  padding: var(--margin-sm);
+  padding: var(--footer-padding);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -36,4 +36,5 @@
 
 .footer a img {
   height: 54%;
+  height: var(--footer-logo-height);
 }

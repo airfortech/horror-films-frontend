@@ -3,14 +3,14 @@
   display: flex;
   justify-content: space-between;
   max-width: 400px;
-  width: 80%;
-  /* background-color: rgba(255, 0, 0, 0.61); */
+  width: var(--pagination-size);
   font-family: var(--primary-font);
   color: var(--third-color);
-  font-size: var(--font-size-md);
+  font-size: var(--pagination-font-size);
   font-weight: 300;
   user-select: none;
   z-index: 2;
+  line-height: 100%;
 }
 
 .paginationTruncable {
@@ -41,6 +41,10 @@
   padding: 10px;
   cursor: pointer;
   transition: transform var(--transition-speed-normal) ease;
+}
+
+.paginationPage:nth-of-type(2) {
+  display: none !important;
 }
 
 .paginationPage.active {

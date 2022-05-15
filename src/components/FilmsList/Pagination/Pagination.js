@@ -5,7 +5,7 @@ import { useLocation, useSearchParams, useNavigate } from "react-router-dom";
 
 const PaginationContainer = ({ page, pages }) => {
   const [currentPage, setCurrentPage] = useState(0);
-  const { pathname, search } = useLocation();
+  const { pathname } = useLocation();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 

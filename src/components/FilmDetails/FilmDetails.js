@@ -27,7 +27,6 @@ export const FilmDetails = ({ film }) => {
     posters,
     video_url,
   } = film;
-  console.log(title);
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [imageProps, setImageProps] = useState(null);

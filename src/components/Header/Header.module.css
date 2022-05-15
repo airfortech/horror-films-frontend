@@ -36,7 +36,8 @@
 .header h1 {
   margin: var(--margin-xl);
   display: flex;
-  flex-direction: column;
+  flex-direction: var(--header-title-flex-direction);
+  column-gap: var(--margin-xl);
   align-items: center;
 }
 

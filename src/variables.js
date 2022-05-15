@@ -19,8 +19,8 @@ export const imgSize = {
 export const imgPosterUrl = "https://image.tmdb.org/t/p/w300_and_h450_bestv2";
 export const imgPersonUrl =
   "https://www.themoviedb.org/t/p/w138_and_h175_face/";
-// export const imgPosterUrl = "https://image.tmdb.org/t/p/w600_and_h900_bestv2";
-export const apiDomain = "http://localhost:3001/api";
+// export const apiDomain = "http://localhost:3001/api";
+export const apiDomain = "http://192.168.100.3:3001/api";
 export const getFilmsUrl = apiDomain + "/films/?";
 export const getFilmsUrlParams =
   "title=&page=1&sort_type=ascending&sort_by=title";
@@ -30,5 +30,3 @@ export const getFilmUrlParams = {
   posters: 6,
   cast: 10,
 };
-// export const getFilmsUrlParams =
-//   "title=&page=1&sort_type=ascending&sort_by=title&language=en";

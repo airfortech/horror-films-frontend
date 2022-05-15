@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
-import { Player, Youtube, DefaultUi } from "@vime/react";
+import { Player, Youtube, DefaultUi, DefaultControls } from "@vime/react";
 import { gsap } from "gsap";
 import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
 import "@vime/core/themes/default.css";
@@ -35,7 +35,6 @@ export const VideoPlayer = ({ src }) => {
           ease: "sine.in",
         }
       );
-      gsap.to(overlayRef.current, { opacity: 1, duration: 0, ease: "sine.in" });
     }
   }, [isPlaying]);
   return (

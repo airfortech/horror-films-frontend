@@ -67,9 +67,11 @@
   --transition-speed-normal: 0.3s;
   --transition-speed-slow: 0.5s;
 
-  --slide-width: 50%;
+  --pagination-size: 80%;
+  --pagination-font-size: var(--font-size-md);
   --slide-max-width: 200px;
   --slider-width: 98%;
+  --slider-padding: 20px 0 27px;
 
   --card-info-height: 90px;
   --card-more-info-height: 300px;
@@ -81,6 +83,16 @@
   --gallery-picture-size: 220px;
 
   --person-size: minmax(120px, 1fr);
+
+  --player-volume-display: block;
+  --header-title-flex-direction: column;
+
+  --footer-padding: var(--margin-sm);
+  --footer-logo-height: 1.2rem;
+
+  --search-form-padding: var(--margin-sm);
+  --search-size: 145px;
+  --switcher-size: 135px;
 }
 
 html {
@@ -133,7 +145,7 @@ input {
     --font-size-md: 1.3rem;
     --font-size-lg: 1.8rem;
     --font-size-xl: 1.5rem;
-    --font-size-xxl: 3rem;
+    --font-size-xxl: 1.8rem;
 
     --avatar-size: 90px;
     --avatar-size-sm: 50px;
@@ -146,10 +158,23 @@ input {
 
     --header: 18vh;
 
+    --pagination-size: 95%;
+    --pagination-font-size: var(--font-size-sm);
     --slide-width: 50%;
     --slider-width: 90%;
+    --slider-padding: 8px 0 27px;
 
     --card-info-height: 76px;
     --card-more-info-height: 200px;
+
+    --player-volume-display: none;
+    --header-title-flex-direction: row;
+
+    --footer-padding: 0 var(--margin-sm);
+    --footer-logo-height: 0.8rem;
+
+    --search-form-padding: calc(var(--margin-sm) / 2) 0;
+    --search-size: 90px;
+    --switcher-size: 125px;
   }
 }

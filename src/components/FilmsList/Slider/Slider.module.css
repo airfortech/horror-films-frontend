@@ -1,5 +1,5 @@
 .slider {
-  padding: 20px 0 27px;
+  padding: var(--slider-padding);
   width: var(--slider-width);
   overflow: hidden;
   /* background-color: rgba(255, 235, 205, 0.11); */

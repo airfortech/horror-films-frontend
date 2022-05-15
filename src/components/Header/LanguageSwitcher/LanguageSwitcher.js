@@ -10,9 +10,9 @@ export const LanguageSwitcher = () => {
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
 
-  console.log("updejtujemy languages");
+  console.log("updejtujemy languages: ", pathname);
   useEffect(() => {
-    console.log("redirect: language switcher");
+    console.log("redirect: language switcher: ", language.code);
     navigate("/" + language.code + pathname.slice(3) + search);
   }, [language]);
 
