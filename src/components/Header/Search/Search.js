@@ -3,17 +3,20 @@ import style from "./Search.module.css";
 import { Switcher } from "./Switcher/Switcher";
 import { SwitcherIcon } from "./SwitcherIcon/SwitcherIcon";
 import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 export const Search = () => {
   const { translations } = useContext(LanguageContext);
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [searchValues, setSearchValues] = useState({
-    title: "",
-    sort_by: "title",
-    sort_type: "ascending",
+    title: searchParams.get("title") || "",
+    sort_by: searchParams.get("sort_by") || "title",
+    sort_type: searchParams.get("sort_type") || "ascending",
   });
+
+  console.log("searchValues: ", searchValues);
 
   const handleInputChange = e => {
     setSearchValues(prevState => ({ ...prevState, title: e.target.value }));
@@ -50,8 +53,14 @@ export const Search = () => {
           <i className="bx bx-search"></i>
         </button>
       </div>
-      <Switcher setSearchValues={setSearchValues} />
-      <SwitcherIcon setSearchValues={setSearchValues} />
+      <Switcher
+        setSearchValues={setSearchValues}
+        initialValue={searchValues.sort_by}
+      />
+      <SwitcherIcon
+        setSearchValues={setSearchValues}
+        initialValue={searchValues.sort_type}
+      />
     </form>
   );
 };

@@ -1,14 +1,13 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
-
+import { musicPlayerDefaultState } from "../../variables";
 import musicPath from "../../assets/music/bg-music.mp3";
 import style from "./MusicPlayer.module.css";
 
 export const MusicPlayer = () => {
   const { translations } = useContext(LanguageContext);
-
   const audio = useRef(null);
-  const [isPlaying, setIsPLaying] = useState(false);
+  const [isPlaying, setIsPLaying] = useState(musicPlayerDefaultState);
   const [volume, setVolume] = useState(20);
 
   const handlePlayMusic = () => {

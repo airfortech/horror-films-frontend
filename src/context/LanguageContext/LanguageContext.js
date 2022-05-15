@@ -1,11 +1,16 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { languageOptions } from "../../languages/languages";
 import { translations } from "../../languages/languages";
 
 export const LanguageContext = createContext();
 
 export const LanguageProvider = props => {
-  const [language, setLanguage] = useState(0);
+  const { pathname } = useLocation();
+  const startedLang = languageOptions.findIndex(
+    option => option.code === pathname.slice(1, 3)
+  );
+  const [language, setLanguage] = useState(startedLang >= 0 ? startedLang : 0);
 
   const switchLanguage = i => {
     setLanguage(prevState =>

@@ -2,12 +2,10 @@ import React, { useRef, useContext, useEffect } from "react";
 import { gsap } from "gsap";
 import style from "./NoResultsView.module.css";
 import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
-import { useParams } from "react-router-dom";
 
 export const NoResultsView = () => {
   const { translations } = useContext(LanguageContext);
   const ref = useRef(null);
-  const { lang } = useParams();
 
   useEffect(() => {
     console.log("Animations");
@@ -25,7 +23,7 @@ export const NoResultsView = () => {
         },
       }
     );
-  }, [lang]);
+  }, [translations.noFilmsFound]);
 
   return (
     <p ref={ref} className={style.noFilmsFound}>

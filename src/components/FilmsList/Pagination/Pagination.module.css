@@ -43,10 +43,6 @@
   transition: transform var(--transition-speed-normal) ease;
 }
 
-.paginationPage:nth-of-type(2) {
-  display: none !important;
-}
-
 .paginationPage.active {
   font-family: var(--secondary-font);
   color: var(--header-color);

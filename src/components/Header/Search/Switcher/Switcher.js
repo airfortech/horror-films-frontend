@@ -4,8 +4,12 @@ import { LanguageContext } from "../../../../context/LanguageContext/LanguageCon
 // import { useSearchParams } from "react-router-dom";
 import style from "./Switcher.module.css";
 
-export const Switcher = ({ setSearchValues }) => {
-  const [category, setCategory] = useState(0);
+export const Switcher = ({ setSearchValues, initialValue }) => {
+  const initialCategory = categories.indexOf(initialValue);
+  const [category, setCategory] = useState(
+    initialCategory >= 0 ? initialCategory : 0
+  );
+  console.log("category: ", categories);
   const { translations } = useContext(LanguageContext);
   // const [searchParams, setSearchParams] = useSearchParams();
 

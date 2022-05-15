@@ -30,3 +30,4 @@ export const getFilmUrlParams = {
   posters: 6,
   cast: 10,
 };
+export const musicPlayerDefaultState = false;

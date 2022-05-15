@@ -9,9 +9,14 @@ const sortModes = [
   { type: "descending", class: "reverse" },
 ];
 
-export const SwitcherIcon = ({ setSearchValues }) => {
+export const SwitcherIcon = ({ setSearchValues, initialValue }) => {
   const { translations } = useContext(LanguageContext);
-  const [sortMode, setSortMode] = useState(sortModes[0]);
+  const initialCategory = sortModes.findIndex(
+    category => category.type === initialValue
+  );
+  const [sortMode, setSortMode] = useState(
+    sortModes[initialCategory >= 0 ? initialCategory : 0]
+  );
   const ref = useRef();
   const box = gsap.utils.selector(ref);
 
