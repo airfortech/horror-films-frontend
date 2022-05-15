@@ -1,23 +1,65 @@
-.tooltip {
-  background: var(--header-bgcolor) !important;
-  border: 1px solid var(--third-color) !important;
-  border-radius: var(--border-radius-sm) !important;
-  opacity: 0.8 !important;
+.tippy-tooltip[data-animation="fade"][data-state="hidden"] {
+  opacity: 0;
 }
-
-.tooltip:global(.place-left)::after,
-.tooltip:global(.place-left)::before {
-  border-left-color: var(--third-color) !important;
+:global(.tippy-iOS) {
+  cursor: pointer !important;
+  -webkit-tap-highlight-color: transparent;
 }
-.tooltip:global(.place-right)::after,
-.tooltip:global(.place-right)::before {
-  border-right-color: var(--third-color) !important;
+:global(.tippy-popper) {
+  pointer-events: none;
+  max-width: calc(100vw - 10px);
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-property: transform;
 }
-.tooltip:global(.place-top)::after,
-.tooltip:global(.place-top)::before {
-  border-top-color: var(--third-color) !important;
+.tippy-tooltip {
+  position: relative;
+  color: #fffc;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+  background-color: #000c;
+  transition-property: visibility, opacity, transform;
+  outline: 0;
+  border: 1px solid #fffc;
+  border-radius: var(--border-radius-sm);
+  margin: 2px;
 }
-.tooltip:global(.place-bottom)::after,
-.tooltip:global(.place-bottom)::before {
-  border-bottom-color: var(--third-color) !important;
+.tippy-tooltip[data-placement^="top"] > :global(.tippy-arrow) {
+  border-width: 8px 8px 0;
+  border-top-color: #fffc;
+  transform-origin: 50% 0;
+  bottom: -8px;
+}
+.tippy-tooltip[data-placement^="bottom"] > :global(.tippy-arrow) {
+  border-width: 0 8px 8px;
+  border-bottom-color: #fffc;
+  transform-origin: 50% 8px;
+  top: -8px;
+}
+.tippy-tooltip[data-placement^="left"] > :global(.tippy-arrow) {
+  border-width: 8px 0 8px 8px;
+  border-left-color: #fffc;
+  transform-origin: 0 50%;
+  right: -8px;
+}
+.tippy-tooltip[data-placement^="right"] > :global(.tippy-arrow) {
+  border-width: 8px 8px 8px 0;
+  border-right-color: #fffc;
+  transform-origin: 8px 50%;
+  left: -8px;
+}
+.tippy-tooltip[data-interactive][data-state="visible"] {
+  pointer-events: auto;
+}
+.tippy-tooltip[data-inertia][data-state="visible"] {
+  transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+}
+:global(.tippy-arrow) {
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+}
+:global(.tippy-content) {
+  padding: 4px 9px;
+  padding: calc(var(--margin-sm) / 2) var(--margin-md);
 }

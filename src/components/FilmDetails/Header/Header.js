@@ -4,6 +4,7 @@ import { minutesToHours } from "../../../tools/minutesToHours";
 import { formatCurrency } from "../../../tools/formatCurrency";
 import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
 import style from "./Header.module.css";
+import { Tooltip } from "../../Tooltip/Tooltip";
 
 export const Header = ({
   title,
@@ -11,6 +12,7 @@ export const Header = ({
   runtime,
   genres,
   vote_average,
+  vote_count,
   tagline,
   original_title,
   budget,
@@ -40,10 +42,12 @@ export const Header = ({
 
       {tagline && <p className={style.tagline}>{tagline}</p>}
       <div className={style.vote}>
-        <p>
-          {vote_average * 10}
-          <span>%</span>
-        </p>
+        <Tooltip title={vote_count + " " + translations.filmDetails.votesCount}>
+          <p>
+            {vote_average * 10}
+            <span>%</span>
+          </p>
+        </Tooltip>
         <p>{translations.filmDetails.usersRating}</p>
       </div>
       <div className={style.secondaryInfo}>

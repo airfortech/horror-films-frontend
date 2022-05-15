@@ -14,7 +14,8 @@
     "trailer": "Trailer",
     "gallery": "Gallery",
     "posters": "Posters",
-    "noInfo": "No info"
+    "noInfo": "No info",
+    "votesCount": "Ratings"
   },
   "searchInput": "Search...",
   "searchCategories": {

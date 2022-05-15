@@ -3,6 +3,7 @@ import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
 import { musicPlayerDefaultState } from "../../variables";
 import musicPath from "../../assets/music/bg-music.mp3";
 import style from "./MusicPlayer.module.css";
+import { Tooltip } from "../Tooltip/Tooltip";
 
 export const MusicPlayer = () => {
   const { translations } = useContext(LanguageContext);
@@ -28,28 +29,27 @@ export const MusicPlayer = () => {
   }, []);
 
   return (
-    <div
-      className={style.container}
-      data-tip={translations.tooltip.musicPlayer}
-    >
-      <audio
-        ref={audio}
-        controls
-        src={musicPath}
-        autoPlay={isPlaying}
-        loop={true}
-      ></audio>
-      <div className={style.player}>
-        <button onClick={handlePlayMusic}>
-          <i className={`bx bx-${isPlaying ? "pause" : "play"}-circle`}></i>
-        </button>
-        <input
-          type="range"
-          max={100}
-          value={volume}
-          onChange={handleChangeVolume}
-        />
+    <Tooltip title={translations.tooltip.musicPlayer} placement="left">
+      <div className={style.container}>
+        <audio
+          ref={audio}
+          controls
+          src={musicPath}
+          autoPlay={isPlaying}
+          loop={true}
+        ></audio>
+        <div className={style.player}>
+          <button onClick={handlePlayMusic}>
+            <i className={`bx bx-${isPlaying ? "pause" : "play"}-circle`}></i>
+          </button>
+          <input
+            type="range"
+            max={100}
+            value={volume}
+            onChange={handleChangeVolume}
+          />
+        </div>
       </div>
-    </div>
+    </Tooltip>
   );
 };

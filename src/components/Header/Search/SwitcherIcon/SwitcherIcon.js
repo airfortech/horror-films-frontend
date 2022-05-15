@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { LanguageContext } from "../../../../context/LanguageContext/LanguageContext";
 
 import style from "./SwitcherIcon.module.css";
+import { Tooltip } from "../../../Tooltip/Tooltip";
 
 const sortModes = [
   { type: "ascending", class: "" },
@@ -42,20 +43,20 @@ export const SwitcherIcon = ({ setSearchValues, initialValue }) => {
   }, [sortMode]);
 
   return (
-    <button
-      data-tip={translations.tooltip.sortType}
-      // data-offset="{'top': 20}"
-      type="button"
-      className={style.switcherIcon}
-      onClick={switchCategory}
-    >
-      <div ref={ref}>
-        <div className={style.box}></div>
-        <div className={style.box}></div>
-        <div className={style.box}></div>
-        <div className={style.box}></div>
-        <div className={style.box}></div>
-      </div>
-    </button>
+    <Tooltip title={translations.tooltip.sortType}>
+      <button
+        type="button"
+        className={style.switcherIcon}
+        onClick={switchCategory}
+      >
+        <div ref={ref}>
+          <div className={style.box}></div>
+          <div className={style.box}></div>
+          <div className={style.box}></div>
+          <div className={style.box}></div>
+          <div className={style.box}></div>
+        </div>
+      </button>
+    </Tooltip>
   );
 };

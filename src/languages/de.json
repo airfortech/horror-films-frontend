@@ -14,7 +14,8 @@
     "trailer": "Video",
     "gallery": "Galerie",
     "posters": "Plakate",
-    "noInfo": "Keine Informationen"
+    "noInfo": "Keine Informationen",
+    "votesCount": "Bewertungen"
   },
   "searchInput": "Suche...",
   "searchCategories": {

@@ -14,8 +14,6 @@ export const Header = () => {
   const { pathname, search } = useLocation();
   return (
     <header className={style.header}>
-      <Tooltip />
-      {/* <p style={{ position: "absolute" }}>{pathname + search}</p> */}
       <h1>
         <span
           className={style.glitch}

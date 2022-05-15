@@ -14,6 +14,7 @@ export const FilmDetails = ({ film }) => {
     runtime,
     genres,
     vote_average,
+    vote_count,
     tagline,
     original_title,
     budget,
@@ -56,6 +57,7 @@ export const FilmDetails = ({ film }) => {
           runtime={runtime}
           genres={genres}
           vote_average={vote_average}
+          vote_count={vote_count}
           tagline={tagline}
           original_title={original_title}
           budget={budget}

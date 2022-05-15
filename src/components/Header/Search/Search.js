@@ -5,6 +5,7 @@ import { SwitcherIcon } from "./SwitcherIcon/SwitcherIcon";
 import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { getFilmsUrlParams } from "../../../variables";
+import { Tooltip } from "../../Tooltip/Tooltip";
 
 export const Search = () => {
   const { translations } = useContext(LanguageContext);
@@ -47,14 +48,12 @@ export const Search = () => {
           value={searchValues.title}
           onChange={handleInputChange}
         />
-        <button
-          type="submit"
-          className={style.inputSubmit}
-          data-tip={translations.tooltip.search}
-        >
-          <i className={`bx bx-search-alt ${style.hovered}`}></i>
-          <i className="bx bx-search"></i>
-        </button>
+        <Tooltip title={translations.tooltip.search}>
+          <button type="submit" className={style.inputSubmit}>
+            <i className={`bx bx-search-alt ${style.hovered}`}></i>
+            <i className="bx bx-search"></i>
+          </button>
+        </Tooltip>
       </div>
       <Switcher
         setSearchValues={setSearchValues}

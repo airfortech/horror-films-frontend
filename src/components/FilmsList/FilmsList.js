@@ -33,7 +33,6 @@ export const FilmsList = () => {
       const numberOfFilms = await getFilms();
       if (numberOfFilms === 0) navigate(`/${lang}/films/no-results`);
     })();
-    console.log("blaxx");
   }, [lang, searchParams]);
 
   if (!films?.films || films.count === 0) {

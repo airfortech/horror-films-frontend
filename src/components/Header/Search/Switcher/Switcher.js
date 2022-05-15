@@ -3,6 +3,7 @@ import { categories } from "../../../../variables";
 import { LanguageContext } from "../../../../context/LanguageContext/LanguageContext";
 // import { useSearchParams } from "react-router-dom";
 import style from "./Switcher.module.css";
+import { Tooltip } from "../../../Tooltip/Tooltip";
 
 export const Switcher = ({ setSearchValues, initialValue }) => {
   const initialCategory = categories.indexOf(initialValue);
@@ -32,24 +33,22 @@ export const Switcher = ({ setSearchValues, initialValue }) => {
   }, [category]);
 
   return (
-    <button
-      type="button"
-      className={style.switcher}
-      data-tip={translations.tooltip.sortCategories}
-    >
-      <div>
-        <i
-          className="bx bx-chevron-left"
-          onClick={() => switchCategory(-1)}
-        ></i>
-        <span onClick={() => switchCategory(1)}>
-          {translations.searchCategories[categories[category]]}
-        </span>
-        <i
-          className="bx bx-chevron-right"
-          onClick={() => switchCategory(1)}
-        ></i>
-      </div>
-    </button>
+    <Tooltip title={translations.tooltip.sortCategories}>
+      <button type="button" className={style.switcher}>
+        <div>
+          <i
+            className="bx bx-chevron-left"
+            onClick={() => switchCategory(-1)}
+          ></i>
+          <span onClick={() => switchCategory(1)}>
+            {translations.searchCategories[categories[category]]}
+          </span>
+          <i
+            className="bx bx-chevron-right"
+            onClick={() => switchCategory(1)}
+          ></i>
+        </div>
+      </button>
+    </Tooltip>
   );
 };
