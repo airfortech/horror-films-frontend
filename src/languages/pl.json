@@ -25,6 +25,7 @@
   },
   "noFilmsFound": "Nie znaleziono filmów.",
   "notFoundView": "Oops! Nie możemy znaleźć strony, jakiej szukasz.",
+  "serverError": "Oops! Coś poszło nie tak. Spróbuj później.",
   "cardMoreInfoButton": "Więcej...",
   "months": [
     "sty",

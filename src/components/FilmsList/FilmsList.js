@@ -20,15 +20,18 @@ export const FilmsList = () => {
       setFilms(newFilms);
       return newFilms.count;
     } catch (error) {
-      navigate(`/${lang}/films/no-results`);
+      console.log("filmslist:", error.message);
+      if (error.message === "Failed to fetch")
+        navigate(`/${lang}/films/server-error`);
+      else navigate(`/${lang}/films/no-results`);
+      return;
     }
   };
 
   useEffect(() => {
     (async function () {
-      const result = await getFilms();
-      console.log(result);
-      if (!result) navigate(`/${lang}/films/no-results`);
+      const numberOfFilms = await getFilms();
+      if (numberOfFilms === 0) navigate(`/${lang}/films/no-results`);
     })();
     console.log("blaxx");
   }, [lang, searchParams]);

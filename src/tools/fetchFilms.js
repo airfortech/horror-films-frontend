@@ -10,5 +10,6 @@ export const fetchFilms = async params => {
     return data;
   } catch (error) {
     console.log("error: " + error.message);
+    throw error;
   }
 };

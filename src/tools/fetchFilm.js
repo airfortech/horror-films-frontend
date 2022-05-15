@@ -7,9 +7,9 @@ export const fetchFilm = async (id, language) => {
     console.log("fetchujemy film: " + url);
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.log("error: " + error.message);
+    throw error;
   }
 };

@@ -18,15 +18,16 @@ export const FilmView = () => {
       console.log(id, lang);
       const data = await fetchFilm(id, lang);
       setFilm(data);
-      gsap.fromTo(
-        ref.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.8, ease: "sine.in" }
-      );
+      if (ref.current)
+        gsap.fromTo(
+          ref.current,
+          { opacity: 0 },
+          { opacity: 1, duration: 0.8, ease: "sine.in" }
+        );
     } catch (error) {
-      console.log("error blabla");
-      navigate(`/${lang}/films/no-results`);
-      return;
+      if (error.message === "Failed to fetch") {
+        navigate(`/${lang}/films/server-error`);
+      } else navigate(`/${lang}/films/no-results`);
     }
   };
 

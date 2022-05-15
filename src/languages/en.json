@@ -25,6 +25,7 @@
   },
   "noFilmsFound": "No films found.",
   "notFoundView": "Oops! We can't find the page you're looking for.",
+  "serverError": "Oops! Something went wrong. Try again later.",
   "cardMoreInfoButton": "More info...",
   "months": [
     "jan",

@@ -25,6 +25,7 @@
   },
   "noFilmsFound": "Keine Filme gefunden.",
   "notFoundView": "Oops! Wir können die Seite, die Sie suchen, nicht finden.",
+  "serverError": "Oops! Etwas ist schief gelaufen. Versuchen Sie es später noch einmal.",
   "cardMoreInfoButton": "Mehr...",
   "months": [
     "jan",

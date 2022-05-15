@@ -4,6 +4,7 @@ import { FilmsView } from "./views/FilmsView/FilmsView";
 import { FilmView } from "./views/FilmView/FilmView";
 import { NoResultsView } from "./views/NoResultsView/NoResultsView";
 import { NotFoundView } from "./views/NotFoundView/NotFoundView";
+import { ServerErrorView } from "./views/ServerErrorView/ServerErrorView";
 import { LanguageProvider } from "./context/LanguageContext/LanguageContext";
 import { Fog } from "./effects/Fog/Fog";
 import style from "./App.module.css";
@@ -39,6 +40,10 @@ export const App = () => {
               <Route
                 path="/:lang/films/no-results"
                 element={<NoResultsView />}
+              />
+              <Route
+                path="/:lang/films/server-error"
+                element={<ServerErrorView />}
               />
               <Route path="/:lang/films/:id" element={<FilmView />} />
               <Route path="*" element={<NotFoundView />} />
