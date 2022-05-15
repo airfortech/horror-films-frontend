@@ -4,16 +4,19 @@ import { Switcher } from "./Switcher/Switcher";
 import { SwitcherIcon } from "./SwitcherIcon/SwitcherIcon";
 import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { getFilmsUrlParams } from "../../../variables";
 
 export const Search = () => {
   const { translations } = useContext(LanguageContext);
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const initialSearchparams = new URLSearchParams(getFilmsUrlParams);
   const [searchValues, setSearchValues] = useState({
-    title: searchParams.get("title") || "",
-    sort_by: searchParams.get("sort_by") || "title",
-    sort_type: searchParams.get("sort_type") || "ascending",
+    title: searchParams.get("title") || initialSearchparams.get("title"),
+    sort_by: searchParams.get("sort_by") || initialSearchparams.get("sort_by"),
+    sort_type:
+      searchParams.get("sort_type") || initialSearchparams.get("sort_type"),
   });
 
   console.log("searchValues: ", searchValues);

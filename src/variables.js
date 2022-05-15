@@ -23,7 +23,7 @@ export const imgPersonUrl =
 export const apiDomain = "http://192.168.100.3:3001/api";
 export const getFilmsUrl = apiDomain + "/films/?";
 export const getFilmsUrlParams =
-  "title=&page=1&sort_type=ascending&sort_by=title";
+  "title=&page=1&sort_type=descending&sort_by=release_date";
 export const getFilmUrl = apiDomain + "/films/";
 export const getFilmUrlParams = {
   backdrops: 20,
