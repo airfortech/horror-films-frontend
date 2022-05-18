@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import style from "./FilmsList.module.css";
+import { useParams, useSearchParams, useNavigate } from "react-router-dom";
 import { Slider } from "./Slider/Slider";
 import { Pagination } from "./Pagination/Pagination";
 import { fetchFilms } from "../../tools/fetchFilms";
-import { useParams, useSearchParams, useNavigate } from "react-router-dom";
+import style from "./FilmsList.module.css";
 
 export const FilmsList = () => {
   const [films, setFilms] = useState("");
-  console.log("Odpalamy filmslist");
   const [searchParams] = useSearchParams();
   const { lang } = useParams();
   const navigate = useNavigate();
@@ -20,7 +19,6 @@ export const FilmsList = () => {
       setFilms(newFilms);
       return newFilms.count;
     } catch (error) {
-      console.log("filmslist:", error.message);
       if (error.message === "Failed to fetch")
         navigate(`/${lang}/films/server-error`);
       else navigate(`/${lang}/films/no-results`);

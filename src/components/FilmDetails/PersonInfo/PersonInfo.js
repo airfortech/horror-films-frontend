@@ -1,7 +1,6 @@
 import React from "react";
 import { imgPersonUrl } from "../../../variables";
 import defaultAvatar from "../../../assets/images/default-avatar.png";
-
 import style from "./PersonInfo.module.css";
 
 export const PersonInfo = ({ name, character, profile_path }) => {

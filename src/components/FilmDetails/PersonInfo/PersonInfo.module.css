@@ -2,7 +2,6 @@
   display: grid;
   grid-template-rows: auto 1fr;
   border-radius: var(--border-radius-sm);
-  /* border: 1px solid var(--secondary-bgcolor-opacity); */
   overflow: hidden;
 }
 

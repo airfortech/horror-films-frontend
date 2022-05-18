@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
+import { Tooltip } from "../Tooltip/Tooltip";
 import { musicPlayerDefaultState } from "../../variables";
 import musicPath from "../../assets/music/bg-music.mp3";
 import style from "./MusicPlayer.module.css";
-import { Tooltip } from "../Tooltip/Tooltip";
 
 export const MusicPlayer = () => {
   const { translations } = useContext(LanguageContext);

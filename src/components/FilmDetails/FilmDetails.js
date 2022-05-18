@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
 import { Header } from "./Header/Header";
 import { People } from "./People/People";
 import { Gallery } from "./Gallery/Gallery";
 import { Modal } from "./Gallery/Modal/Modal";
 import { VideoPlayer } from "./VideoPlayer/VideoPlayer";
-import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
 import style from "./FilmDetails.module.css";
 
 export const FilmDetails = ({ film }) => {

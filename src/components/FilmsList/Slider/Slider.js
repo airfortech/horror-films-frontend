@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
+import { useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, Mousewheel, FreeMode } from "swiper";
-import { gsap } from "gsap";
 import { Card } from "./Card/Card";
-import { useParams } from "react-router-dom";
+import { gsap } from "gsap";
 import "swiper/css";
 import "swiper/css/lazy";
 import "swiper/css/scrollbar";
@@ -11,13 +11,11 @@ import "swiper/css/free-mode";
 import style from "./Slider.module.css";
 
 export const Slider = ({ films }) => {
-  console.log("odpalamy slidera");
   const { lang } = useParams();
-
   const ref = useRef(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
-    console.log("Animations: " + lang);
     gsap.fromTo(
       ref.current,
       { opacity: 0 },
@@ -26,7 +24,6 @@ export const Slider = ({ films }) => {
   }, [lang, films]);
 
   const handleResize = () => {
-    console.log("windowWidth: " + windowWidth);
     setWindowWidth(window.innerWidth);
   };
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
-import { Player, Youtube, DefaultUi, DefaultControls } from "@vime/react";
-import { gsap } from "gsap";
+import { Player, Youtube, DefaultUi } from "@vime/react";
 import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
+import { gsap } from "gsap";
 import "@vime/core/themes/default.css";
 import style from "./VideoPlayer.module.css";
 
@@ -12,7 +12,6 @@ export const VideoPlayer = ({ src }) => {
   const { translations } = useContext(LanguageContext);
 
   useEffect(() => {
-    console.log("player: " + isPlaying);
     if (isPlaying) {
       gsap.fromTo(
         overlayRef.current,

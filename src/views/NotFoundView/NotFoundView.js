@@ -1,8 +1,8 @@
 import React, { useRef, useContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
 import { gsap } from "gsap";
 import style from "./NotFoundView.module.css";
-import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
-import { useParams } from "react-router-dom";
 
 export const NotFoundView = () => {
   const { translations } = useContext(LanguageContext);
@@ -10,7 +10,6 @@ export const NotFoundView = () => {
   const { lang } = useParams();
 
   useEffect(() => {
-    console.log("Animations");
     gsap.set(ref.current, { opacity: 0 });
     gsap.fromTo(
       ref.current,
@@ -20,9 +19,6 @@ export const NotFoundView = () => {
         duration: 0.8,
         ease: "sine.in",
         delay: 0.3,
-        onComplete: () => {
-          console.log("ok");
-        },
       }
     );
   }, [lang]);

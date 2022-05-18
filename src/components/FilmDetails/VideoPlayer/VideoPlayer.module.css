@@ -35,9 +35,6 @@
   --vm-slider-track-color: var(--secondary-bgcolor-opacity3);
   --vm-slider-thumb-bg: var(--header-color);
   --vm-scrubber-buffered-bg: var(--secondary-bgcolor-opacity3);
-  /* --vm-spinner-fill-color: red; */
-  /* --vm-spinner-track-color: red; */
-  /* --vm-scrim-bg: red; */
   --vm-tooltip-color: transparent;
   --vm-tooltip-bg: transparent;
   --vm-menu-bg: var(--secondary-bgcolor-opacity3);

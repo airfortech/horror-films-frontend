@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { gsap } from "gsap";
 import { LanguageContext } from "../../../../context/LanguageContext/LanguageContext";
-
-import style from "./SwitcherIcon.module.css";
 import { Tooltip } from "../../../Tooltip/Tooltip";
+import { gsap } from "gsap";
+import style from "./SwitcherIcon.module.css";
 
 const sortModes = [
   { type: "ascending", class: "" },
@@ -28,7 +27,6 @@ export const SwitcherIcon = ({ setSearchValues, initialValue }) => {
   };
 
   useEffect(() => {
-    console.log(sortMode);
     setSearchValues(prevState => ({
       ...prevState,
       sort_type: sortMode.type,

@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
 import { imgBaseUrl, imgSize } from "../../../../variables";
+import "react-image-lightbox/style.css";
 import style from "./Modal.module.css";
 
-export const Modal = ({ modalIsOpen, closeModal, src, index }) => {
+export const Modal = ({ modalIsOpen, closeModal, src }) => {
   return (
     <div>
       {modalIsOpen && (

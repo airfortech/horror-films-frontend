@@ -1,16 +1,17 @@
-import React, { useContext, useEffect, useState } from "react";
-import style from "./Search.module.css";
+import React, { useContext, useState } from "react";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
 import { Switcher } from "./Switcher/Switcher";
 import { SwitcherIcon } from "./SwitcherIcon/SwitcherIcon";
-import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { getFilmsUrlParams } from "../../../variables";
 import { Tooltip } from "../../Tooltip/Tooltip";
+import { getFilmsUrlParams } from "../../../variables";
+import style from "./Search.module.css";
 
 export const Search = () => {
   const { translations } = useContext(LanguageContext);
   const { pathname } = useLocation();
   const navigate = useNavigate();
+
   const [searchParams] = useSearchParams();
   const initialSearchparams = new URLSearchParams(getFilmsUrlParams);
   const [searchValues, setSearchValues] = useState({
@@ -19,8 +20,6 @@ export const Search = () => {
     sort_type:
       searchParams.get("sort_type") || initialSearchparams.get("sort_type"),
   });
-
-  console.log("searchValues: ", searchValues);
 
   const handleInputChange = e => {
     setSearchValues(prevState => ({ ...prevState, title: e.target.value }));
@@ -33,10 +32,6 @@ export const Search = () => {
     const link = `/${lang}/films/?title=${title}&page=1&sort_type=${sort_type}&sort_by=${sort_by}`;
     navigate(link);
   };
-
-  useEffect(() => {
-    console.log(searchValues);
-  }, [searchValues]);
 
   return (
     <form className={style.form} onSubmit={handleInputSend}>

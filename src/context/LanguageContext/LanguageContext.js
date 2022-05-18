@@ -19,6 +19,7 @@ export const LanguageProvider = props => {
         : (prevState + i) % languageOptions.length
     );
   };
+
   return (
     <LanguageContext.Provider
       value={{

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
-import style from "./LanguageSwitcher.module.css";
-import Flag from "react-world-flags";
-import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
 import { useLocation, useNavigate } from "react-router-dom";
+import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
 import { Tooltip } from "../../Tooltip/Tooltip";
+import Flag from "react-world-flags";
+import style from "./LanguageSwitcher.module.css";
 
 export const LanguageSwitcher = () => {
   const { language, switchLanguage, translations } =
@@ -11,9 +11,7 @@ export const LanguageSwitcher = () => {
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
 
-  console.log("updejtujemy languages: ", pathname);
   useEffect(() => {
-    console.log("redirect: language switcher: ", language.code);
     navigate("/" + language.code + pathname.slice(3) + search);
   }, [language]);
 

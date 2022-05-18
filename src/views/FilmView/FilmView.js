@@ -1,10 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
-import { gsap } from "gsap";
 import { useParams, useNavigate } from "react-router-dom";
+import { FilmDetails } from "../../components/FilmDetails/FilmDetails";
 import { FadeOutEdges } from "../../components/HOCs/FadeOutEdges/FadeOutEdges";
 import { fetchFilm } from "../../tools/fetchFilm";
-import { FilmDetails } from "../../components/FilmDetails/FilmDetails";
-
+import { gsap } from "gsap";
 import style from "./FilmView.module.css";
 
 export const FilmView = () => {
@@ -15,8 +14,8 @@ export const FilmView = () => {
 
   const getFilm = async () => {
     try {
-      console.log(id, lang);
       const data = await fetchFilm(id, lang);
+      if (data.error) throw new Error();
       setFilm(data);
       if (ref.current)
         gsap.fromTo(

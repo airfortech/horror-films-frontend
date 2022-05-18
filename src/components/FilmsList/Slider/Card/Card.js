@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import style from "./Card.module.css";
 import { LanguageContext } from "../../../../context/LanguageContext/LanguageContext";
 import { convertDate } from "../../../../tools/convertDate";
 import { imgPosterUrl } from "../../../../variables";
 import { cutText } from "../../../../tools/cutText";
 import defaultPoster from "../../../../assets/images/default-poster.png";
+import style from "./Card.module.css";
 
 export const Card = props => {
   const { lang } = useParams();

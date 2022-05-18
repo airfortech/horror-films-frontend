@@ -1,5 +1,4 @@
 .fadingEdges {
-  /* width: 100%; */
   overflow-y: auto;
 
   --scrollbar-width: 8px;
@@ -20,13 +19,11 @@
   mask-size: var(--mask-size-content), var(--mask-size-scrollbar);
   mask-position: 0 0, 100% 0;
   mask-repeat: no-repeat, no-repeat;
-
   scrollbar-width: var(--scrollball-width);
 }
 
 .fadingEdges::-webkit-scrollbar {
   width: var(--scrollbar-width);
-  /* display: none; */
 }
 
 .fadingEdges::-webkit-scrollbar-thumb {

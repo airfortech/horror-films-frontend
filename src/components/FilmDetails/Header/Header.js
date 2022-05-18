@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
+import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
+import { Tooltip } from "../../Tooltip/Tooltip";
 import { imgPosterUrl } from "../../../variables";
 import { minutesToHours } from "../../../tools/minutesToHours";
 import { formatCurrency } from "../../../tools/formatCurrency";
-import { LanguageContext } from "../../../context/LanguageContext/LanguageContext";
 import style from "./Header.module.css";
-import { Tooltip } from "../../Tooltip/Tooltip";
 
 export const Header = ({
   title,

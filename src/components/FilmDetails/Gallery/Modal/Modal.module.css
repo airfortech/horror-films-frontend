@@ -1,8 +1,3 @@
-.overlay {
-  /* background-color: var(--header-bgcolor-opacity2); */
-  /* padding: var(--margin-lg); */
-}
-
 .overlay > :global(.ril-toolbar.ril__toolbar) {
   background-color: transparent;
 }
@@ -12,7 +7,7 @@
   border-radius: var(--border-radius-md);
   overflow: visible;
   z-index: 0;
-  /* border: 9px solid var(--secondary-bgcolor); */
+  border: 4px solid var(--secondary-bgcolor);
 }
 
 .overlay > :global(.ril-inner.ril__inner) > img::after {
@@ -24,21 +19,13 @@
   top: 0;
   left: 0;
   background-color: var(--secondary-bgcolor);
-  border: 9px solid var(--secondary-bgcolor);
+  border: 4px solid var(--secondary-bgcolor);
   transform: scale(1.1);
   z-index: 10000;
-  color: aliceblue;
 }
 
 .overlay button {
   filter: brightness(0) saturate(100%) invert(51%) sepia(83%) saturate(5852%)
     hue-rotate(342deg) brightness(95%) contrast(116%);
   transform: scaleX(-1);
-}
-
-.modal {
-  background-color: papayawhip;
-}
-
-.modal img {
 }

@@ -1,6 +1,6 @@
 {
-  "name": "people-list",
-  "version": "0.1.0",
+  "name": "horror-films",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -15,7 +15,6 @@
     "react-image-lightbox": "^5.1.4",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
-    "react-tooltip": "^4.2.21",
     "react-world-flags": "^1.4.0",
     "swiper": "^8.1.0",
     "uikit-react": "^3.1.3",

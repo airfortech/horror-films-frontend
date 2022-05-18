@@ -13,38 +13,38 @@
 }
 .tippy-tooltip {
   position: relative;
-  color: #fffc;
+  color: var(--secondary-color-opacity);
   border-radius: 4px;
   font-size: 14px;
   line-height: 1.4;
-  background-color: #000c;
+  background-color: var(--header-bgcolor-opacity3);
   transition-property: visibility, opacity, transform;
   outline: 0;
-  border: 1px solid #fffc;
+  border: 1px solid var(--secondary-color-opacity);
   border-radius: var(--border-radius-sm);
   margin: 2px;
 }
 .tippy-tooltip[data-placement^="top"] > :global(.tippy-arrow) {
   border-width: 8px 8px 0;
-  border-top-color: #fffc;
+  border-top-color: var(--secondary-color-opacity);
   transform-origin: 50% 0;
   bottom: -8px;
 }
 .tippy-tooltip[data-placement^="bottom"] > :global(.tippy-arrow) {
   border-width: 0 8px 8px;
-  border-bottom-color: #fffc;
+  border-bottom-color: var(--secondary-color-opacity);
   transform-origin: 50% 8px;
   top: -8px;
 }
 .tippy-tooltip[data-placement^="left"] > :global(.tippy-arrow) {
   border-width: 8px 0 8px 8px;
-  border-left-color: #fffc;
+  border-left-color: var(--secondary-color-opacity);
   transform-origin: 0 50%;
   right: -8px;
 }
 .tippy-tooltip[data-placement^="right"] > :global(.tippy-arrow) {
   border-width: 8px 8px 8px 0;
-  border-right-color: #fffc;
+  border-right-color: var(--secondary-color-opacity);
   transform-origin: 8px 50%;
   left: -8px;
 }

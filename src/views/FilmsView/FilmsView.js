@@ -1,16 +1,14 @@
 import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { FilmsList } from "../../components/FilmsList/FilmsList";
 import { useLocation } from "react-router-dom";
+import { FilmsList } from "../../components/FilmsList/FilmsList";
+import { gsap } from "gsap";
 import style from "./FilmsView.module.css";
 
 export const FilmsView = () => {
   const ref = useRef(null);
-  const { pathname, search } = useLocation();
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    console.log("newPath");
-    console.log(search);
     gsap.fromTo(
       ref.current,
       { opacity: 0 },

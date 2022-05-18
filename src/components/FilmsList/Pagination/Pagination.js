@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from "react";
-import style from "./Pagination.module.css";
-import { Pagination } from "react-headless-pagination";
+import React, { useState } from "react";
 import { useLocation, useSearchParams, useNavigate } from "react-router-dom";
+import { Pagination } from "react-headless-pagination";
+import style from "./Pagination.module.css";
 
 const PaginationContainer = ({ page, pages }) => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -9,11 +9,7 @@ const PaginationContainer = ({ page, pages }) => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  console.log("");
-  console.log("odpalamy paginacje");
-
   const handlePageChange = newPage => {
-    console.log("current page: " + (newPage + 1));
     setCurrentPage(newPage);
     const newSearchParams = searchParams;
     newSearchParams.set("page", newPage + 1);

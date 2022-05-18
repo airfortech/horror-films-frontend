@@ -13,9 +13,6 @@
   text-transform: uppercase;
 }
 
-.footer a:hover p {
-}
-
 .footer a,
 .footer > p {
   margin: 0 var(--margin-lg);
