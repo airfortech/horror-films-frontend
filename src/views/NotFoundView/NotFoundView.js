@@ -1,5 +1,4 @@
 import React, { useRef, useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import { LanguageContext } from "../../context/LanguageContext/LanguageContext";
 import { gsap } from "gsap";
 import style from "./NotFoundView.module.css";
@@ -7,7 +6,6 @@ import style from "./NotFoundView.module.css";
 export const NotFoundView = () => {
   const { translations } = useContext(LanguageContext);
   const ref = useRef(null);
-  const { lang } = useParams();
 
   useEffect(() => {
     gsap.set(ref.current, { opacity: 0 });
@@ -21,7 +19,7 @@ export const NotFoundView = () => {
         delay: 0.3,
       }
     );
-  }, [lang]);
+  }, [translations.noFilmsFound]);
 
   return (
     <p ref={ref} className={style.notFoundView}>

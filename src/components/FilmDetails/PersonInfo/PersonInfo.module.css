@@ -29,6 +29,7 @@
   display: block;
   width: 100%;
   opacity: 0.5;
+  transition: transform var(--transition-speed-normal);
 }
 
 .info {

@@ -9,6 +9,7 @@
   background-repeat: repeat-x;
   background-size: auto 100%;
   background-position: bottom;
+  user-select: none;
   animation: bg-zoom 30s infinite;
 }
 

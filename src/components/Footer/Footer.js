@@ -6,7 +6,6 @@ export const Footer = () => {
   return (
     <footer className={style.footer}>
       <a href="https://github.com/airfortech">
-        <i className="bx bxl-github"></i>
         <p>© 2022 by airm</p>
       </a>
       <a href="https://github.com/airfortech/horror-films">
