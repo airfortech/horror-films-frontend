@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Horror Films Frontend v1.0.2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The idea of making this web app was creating fancy looking custom styled React App using Horror Films Backend API for learning purpose.
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+## Live
 
-### `npm start`
+**Live:** https://horror-films.airm.ct8.pl/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Horror Films Backend Resources
 
-### `npm test`
+**Github:** https://github.com/airfortech/horror-films-backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Additional Main Packages
 
-### `npm run eject`
+@tippyjs/react
+https://www.npmjs.com/package/@tippyjs/react
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+@vime/react
+https://www.npmjs.com/package/@vime/react
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+gsap
+https://www.npmjs.com/package/gsap
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+react-headless-pagination
+https://www.npmjs.com/package/react-headless-pagination
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+react-image-lightbox
+https://www.npmjs.com/package/react-image-lightbox
 
-## Learn More
+swiper
+https://www.npmjs.com/package/swiper
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Structure
+    app
+    │   config.js
+    │   .env
+    │   .env.example
+    ├───controllers
+    │   └───api
+    ├───db
+    │   ├───data
+    │   │       films.json
+    │   ├───models
+    │   └───tools
+    ├───helpers
+    └───routes
 
-### Code Splitting
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Install Packages
 
-### Analyzing the Bundle Size
+    npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<br>
 
-### Making a Progressive Web App
+## Configure Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+`/app/.env` file
+- rename `.env.example` file to `.env`,
+- get API key from https://www.themoviedb.org/documentation/api, creating an account and provide it in  `.env` file
+- provide your mongo database url in `.env` file
 
-### Advanced Configuration
+`/app/config.js` file
+- `frontEndHost: "http://localhost:3000"` - url for cors
+- `resultsPerPage: 12` - results per page provided by API
+- `languagesToFetch: ["en", "pl"]` - you can specify in array films languages you want to store in your database
+- `yearFrom: 2000` - year you start gathering films from
+- ` yearTo: 2022` - year you end gathering films
+- `genre: 27` - films genre you want to store in database (more in tools section)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<br>
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Tools

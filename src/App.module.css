@@ -22,4 +22,5 @@
   background-position: center 0;
   background-repeat: repeat-x;
   overflow-y: auto;
+  overflow: hidden;
 }

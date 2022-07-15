@@ -8,7 +8,7 @@ export const Footer = () => {
       <a href="https://github.com/airfortech">
         <p>© 2022 by airm</p>
       </a>
-      <a href="https://github.com/airfortech/horror-films">
+      <a href="https://github.com/airfortech/horror-films-frontend">
         <i className="bx bxl-github"></i>
         <p>Source code</p>
       </a>
