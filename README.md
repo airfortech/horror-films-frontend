@@ -17,11 +17,18 @@ The idea of making this web app was creating fancy looking custom styled React A
 
 <br>
 
+## Screenshot
+
+![Preview](/res/opera_7CVCGUQRug.png)
+
+<br>
+
 ## Tech Stack
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+
 <br>
 
 ## Additional Main Packages
@@ -48,18 +55,45 @@ https://www.npmjs.com/package/swiper
 
 ## Project Structure
     app
-    │   config.js
-    │   .env
-    │   .env.example
-    ├───controllers
-    │   └───api
-    ├───db
-    │   ├───data
-    │   │       films.json
-    │   ├───models
-    │   └───tools
-    ├───helpers
-    └───routes
+    ├───assets
+    │   ├───images
+    │   └───music
+    ├───components
+    │   ├───FilmDetails
+    │   │   ├───Gallery
+    │   │   │   ├───Modal
+    │   │   │   └───Picture
+    │   │   ├───Header
+    │   │   ├───People
+    │   │   ├───PersonInfo
+    │   │   └───VideoPlayer
+    │   ├───FilmsList
+    │   │   ├───Pagination
+    │   │   └───Slider
+    │   │       └───Card
+    │   ├───Footer
+    │   ├───Header
+    │   │   ├───LanguageSwitcher
+    │   │   └───Search
+    │   │       ├───Switcher
+    │   │       └───SwitcherIcon
+    │   ├───HOCs
+    │   │   └───FadeOutEdges
+    │   ├───MusicPlayer
+    │   └───Tooltip
+    ├───context
+    │   └───LanguageContext
+    ├───effects
+    │   ├───bats
+    │   └───Fog
+    ├───languages
+    ├───tools
+    └───views
+        ├───FilmsView
+        ├───FilmView
+        ├───NoResultsView
+        ├───NotFoundView
+        └───ServerErrorView
 
 <br>
 
@@ -71,19 +105,41 @@ https://www.npmjs.com/package/swiper
 
 ## Configure Project
 
-`/app/.env` file
-- rename `.env.example` file to `.env`,
-- get API key from https://www.themoviedb.org/documentation/api, creating an account and provide it in  `.env` file
-- provide your mongo database url in `.env` file
+`/src/variables.js` file. Important variables:
 
-`/app/config.js` file
-- `frontEndHost: "http://localhost:3000"` - url for cors
-- `resultsPerPage: 12` - results per page provided by API
-- `languagesToFetch: ["en", "pl"]` - you can specify in array films languages you want to store in your database
-- `yearFrom: 2000` - year you start gathering films from
-- ` yearTo: 2022` - year you end gathering films
-- `genre: 27` - films genre you want to store in database (more in tools section)
+API Url:
+```js
+export const apiDomain = "http://localhost:3001/api";
+```
+
+Default search params:
+```js
+export const getFilmsUrlParams =
+  "title=&page=1&sort_type=descending&sort_by=release_date";
+```
+
+Number of items you want to get:
+```js
+export const getFilmUrlParams = {
+  backdrops: 20,
+  posters: 6,
+  cast: 14,
+};
+```
+
+Play music in background at start (`true` not supported in some browsers)
+```js
+export const musicPlayerDefaultState = true;
+```
 
 <br>
 
-## Tools
+## Run Project
+
+Development mode:
+
+    npm start
+
+Build Production app:
+
+    npm run build
