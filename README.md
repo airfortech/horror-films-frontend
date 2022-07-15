@@ -54,7 +54,7 @@ https://www.npmjs.com/package/swiper
 <br>
 
 ## Project Structure
-    app
+    src
     ├───assets
     │   ├───images
     │   └───music
